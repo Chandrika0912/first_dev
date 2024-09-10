@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home Page</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+</head>
+<style>
+  #logoutBtn {
+    font-size: 18px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px -7px;
+    background-color: #f8f9fa;
+  }
+
+  .navbar .container-fluid {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .navbar .d-flex {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    background-color: gray;
+  }
+
+  .navbar .photo {
+    width: 46px;
+    margin-right: 15px;
+  }
+
+  .navbar h2 {
+    margin: 0;
+    flex: 1;
+    text-align: center;
+  }
+
+  .navbar #logoutBtn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  .accordion-button:not(.collapsed)::after {
+    background-image: url(minus.svg)
+    
+}
+.accordion-button::after {
+  flex-shrink: 0;
+  width: var(--bs-accordion-btn-icon-width);
+  height: var(--bs-accordion-btn-icon-width);
+  margin-left: auto;
+  content: "";
+  background-image: url(plus.svg);
+  background-repeat: no-repeat;
+  background-size: var(--bs-accordion-btn-icon-width);
+  transition: var(--bs-accordion-btn-icon-transition);
+}
+</style>
+<body>
+  <div class="home-container">
+    <nav class="navbar bg-body-tertiary">
+      <div class="container-fluid">
+        <form class="d-flex" role="search">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSMhHlhgHCu56HBH4UM1i8DywximFLGaPgiKA&amp;s" class="sFlh5c FyHeAf" alt="DORSU - BSES GreenPulse | Mati" jsname="JuXqh" style="max-width: 1429px; width: 68px; height: 68px; margin: 0px;" data-ilt="1725952568621">
+          <h2>Clamp</h2>
+          <button id="General Admin">General Admin</button>
+        </form>
+      </div>
+    </nav>
+    <br>
+    <div>
+      <div class="accordion1">
+        <div class="accordion1-content" style="padding: 54px 0px;">
+          <div class="concept" style="margin-left: 32px;">
+          <button style="background-color: gray; border-radius: 0.5rem;color:white;"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnMKoc5DPbXkFiCsITqw3dfOM5mR-rXWzaug&amp;s" class="sFlh5c FyHeAf" alt="Add Male User Color icon PNG and SVG Vector Free Download" jsname="JuXqh" style="max-width: 778px; width: 38px; height: 26px; margin: 0px;" data-ilt="1725950635170">User creation</button>
+          <button style="background-color: gray; border-radius: 0.5rem; color:white;"><img src="https://cdn.pixabay.com/photo/2024/07/06/04/27/map-8875912_640.png" jsaction="" class="sFlh5c FyHeAf iPVvYb" style="max-width: 778px; height: 26px; margin: 0px; width: 38px;" alt="1,000+ Free Location &amp; Map Images - Pixabay" jsname="kn3ccd" aria-hidden="false">Area creation</button>
+          <button style="background-color: gray; border-radius: 0.5rem; color:white;"><img src="https://cdn-icons-png.flaticon.com/512/7604/7604036.png" jsaction="" class="sFlh5c FyHeAf iPVvYb" style="max-width: 778px; width: 19px; height: 26px; margin: 0px;" alt="Table - Free web icons" jsname="kn3ccd" aria-hidden="false">Custom Tables</button>
+          <button style="background-color: gray; border-radius: 0.5rem; color:white;"><img src="https://cdn-icons-png.flaticon.com/512/7604/7604036.png" jsaction="" class="sFlh5c FyHeAf iPVvYb" style="max-width: 778px; width: 19px; height: 26px; margin: 0px;" alt="Table - Free web icons" jsname="kn3ccd" aria-hidden="false">Sql Query</button>
+          <button style="background-color: gray; border-radius: 0.5rem; color:white;"><img src="https://www.cdc.gov/epiinfo/images/mobile/mobile-android.png?_=99686" jsaction="" class="sFlh5c FyHeAf iPVvYb" style="max-width: 778px; height: 26px; margin: 0px; width: 38px;" alt="Mobile | Epi Info™ | CDC" jsname="kn3ccd" aria-hidden="false">Mobile App Versions</button>
+        </div>
+          <div class="accordion" id="accordionExample">
+            <div class="accordion-item" style="margin-left: 32px;">
+              <h2 class="accordion-header" id="headingOne">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
+                  aria-expanded="true" aria-controls="collapseOne" style="background-color: gray;">
+                  User creation
+                </button>
+              </h2>
+              <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+                data-bs-parent="#accordionExample">
+                <div class="accordion-body" style="height: 308px;">
+                  <div class="container text-center">
+                    <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3" style="margin-bottom: -14px;">
+                      <div class="accordion1-content-description">
+                        <label for="User ID">User ID:</label>
+                        <input type="text" id="name" placeholder="User ID">
+                      </div>
+                      <div class="accordion1-content-description">
+                        <label for="User Name">User Name:</label>
+                        <input type="text" id="User Name" placeholder="User Name">
+                      </div>
+                      <div class="accordion1-content-description">
+                        <label for="Role Name">Role Name:</label>
+                        <select>
+                          <option>--select your Role</option>
+                          <option value="Assistant Engineer">Assistant Engineer</option>
+                          <option value="Sr.Engineer">Sr.Engineer</option>
+                          <option value="Radiology Engineer">Radiology Engineer</option>
+                        </select>
+                      </div>
+                      <div class="accordion1-content-description">
+                        <label for="Company code">Company code:</label>
+                        <select>
+                          <option>--select code--</option>
+                          <option value="R13">R13</option>
+                          <option value="R16">R16</option>
+                          <option value="R19">R19</option>
+                          <option value="R21">R21</option>
+                        </select>
+                      </div>
+                      <div class="accordion1-content-description">
+                        <label for="Division">Division:</label>
+                        <select>
+                          <option>--select Division--</option>
+                          <option value="West Division">West Division</option>
+                          <option value="East Division">East Division</option>
+                          <option value="North Division">North Division</option>
+                          <option value="South Division">South Division</option>
+                        </select>
+                      </div>
+        
+                      <div class="accordion1-content-description">
+                        <label for="Sub Division">Sub Division:</label>
+                        <select>
+                          <option>--select sub division--</option>
+                          <option value="west zone">west zone</option>
+                          <option value="east zone">east zone</option>
+                          <option value="north zone">north zone</option>
+                          <option value="south zone">south zone</option>
+                        </select>
+                      </div>
+                      <div class="accordion1-content-description">
+                        <label for="Password">password:</label>
+                        <input type="password" id="password" placeholder="password">
+                      </div>
+                      <div class="accordion1-content-description">
+                        <label for="Email">Email:</label>
+                        <input type="Email" id="Email" placeholder="Eg:abc@gmail.com">
+                      </div>
+                      <div class="accordion1-content-description">
+                        <label for="Phone Number">Phone Number:</label>
+                        <input type="Number" id="Number" placeholder="Eg:912345xxxx">
+                      </div>
+                      <div class="accordion1-content-description">
+                        <label>Address:</label>
+                        <input type="text" id="text" placeholder="">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"></script>
+    <script>
+           document.getElementById('GeneralAdminBtn').addEventListener('click', function () {
+           alert('General Admin button clicked!');
+});
+    </script>
+</body>
+
+</html>
