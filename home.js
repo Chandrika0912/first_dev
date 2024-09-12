@@ -1,3 +1,4 @@
+
 $(document).ready(function() {
     $("#accordionExample").hide();
     $("#accordionExample1").hide();
@@ -13,8 +14,8 @@ $(document).ready(function() {
         $("#accordionExample3").hide();
         $("#accordionExample4").hide();
         $('#collapseOne').collapse('show');
+        
     });
-
     $('#btnareacreation').click(function() {
         setActiveButton('#btnareacreation');
         // Toggle the accordion (show/hide)
@@ -25,7 +26,6 @@ $(document).ready(function() {
         $("#accordionExample").hide();
         $('#collapseOnearea').collapse('show');
     });
-
     $('#btncustomtables').click(function() {
         setActiveButton('#btncustomtables');
         // Toggle the accordion (show/hide)
@@ -36,7 +36,6 @@ $(document).ready(function() {
         $("#accordionExample1").hide();
         $('#collapseOnecustomtables').collapse('show');
     });
-
     $('#btnsqlquery').click(function() {
         setActiveButton('#btnsqlquery');
         // Toggle the accordion (show/hide)
@@ -47,7 +46,6 @@ $(document).ready(function() {
         $("#accordionExample4").hide();
         $('#collapseOnesqlquery').collapse('show');
     });
-
     $('#btnmobileappversions').click(function() {
         setActiveButton('#btnmobileappversions');
         // Toggle the accordion (show/hide)
@@ -58,28 +56,129 @@ $(document).ready(function() {
         $("#accordionExample3").hide();
         $('#collapseOnemobileappversions').collapse('show');
     });
-});
+    $('#btnSubmit').on('click', function() {
+        let formData={
+            userID: $('#name').val(),
+        userName: $('#UserName').val(),
+        roleName: $('select').eq(0).val(),
+        companyCode: $('select').eq(1).val(),
+        division: $('select').eq(2).val(),
+        subDivision: $('select').eq(3).val(),
+        password: $('#password').val(),
+        email: $('#Email').val(),
+        phoneNumber: $('#Number').val(),
+        address: $('#text').val()
+        }
+        let dataArray = [formData];
+        console.log(dataArray);
 
+  });
+  var dataArrObj=[
+    {
+        "userID": "123",
+        "userName": "jhkjhk",
+        "roleName": "Assistant Engineer",
+        "companyCode": "R16",
+        "division": "West Division",
+        "subDivision": "west zone",
+        "password": "jhkjhk",
+        "email": "jhkjh@dgh",
+        "phoneNumber": "4564543654364",
+        "address": "khjkjhk jkjhk"
+    },
+    {
+        "userID": "23",
+        "userName": "jhkjhk",
+        "roleName": "Assistant Engineer",
+        "companyCode": "R16",
+        "division": "West Division",
+        "subDivision": "west zone",
+        "password": "jhkjhk",
+        "email": "jhkjh@dgh",
+        "phoneNumber": "4564543654364",
+        "address": "khjkjhk jkjhk"
+    },
+    {
+        "userID": "45",
+        "userName": "jhkjhk",
+        "roleName": "Assistant Engineer",
+        "companyCode": "R16",
+        "division": "West Division",
+        "subDivision": "west zone",
+        "password": "jhkjhk",
+        "email": "jhkjh@dgh",
+        "phoneNumber": "4564543654364",
+        "address": "khjkjhk jkjhk"
+    },
+    {
+        "userID": "45",
+        "userName": "jhkjhk",
+        "roleName": "Assistant Engineer",
+        "companyCode": "R16",
+        "division": "West Division",
+        "subDivision": "west zone",
+        "password": "jhkjhk",
+        "email": "jhkjh@dgh",
+        "phoneNumber": "4564543654364",
+        "address": "khjkjhk jkjhk"
+    }
+]
+  function populateTable() {
+    var $tbody = $('#data-table tbody');
+    $tbody.empty(); // Clear existing rows
+    dataArrObj.forEach(function(item, index) {
+        var row = '<tr data-index="' + index + '">' +
+                    '<td>' + item.userID + '</td>' +
+                    '<td>' + item.userName + '</td>' +
+                    '<td>' + item.roleName + '</td>' +
+                    '<td>' + item.companyCode + '</td>' +
+                    '<td>' + item.division + '</td>' +
+                    '<td>' + item.subDivision + '</td>' +
+                    '<td>' + item.email + '</td>' +
+                    '<td>' + item.phoneNumber + '</td>' +
+                    '<td>' + item.address + '</td>' +
+                    '<td><button class="edit-btn">Edit</button> <button class="delete-btn">Delete</button></td>' +
+                  '</tr>';
+        $tbody.append(row);
+    });
+}
+function addRow(item) {
+    dataArrObj.push(item);
+    populateTable();
+}
+function editRow(index, updatedItem) {
+    dataArrObj[index] = updatedItem;
+    populateTable();
+}
+function deleteRow(index) {
+    dataArrObj.splice(index, 1);
+    populateTable();
+}
+// Initial table population
+populateTable();
+// Handle Edit and Delete
+$('#data-table').on('click', '.edit-btn', function() {
+    var index = $(this).closest('tr').data('index');
+    var item = dataArrObj[index];
+    // Logic to handle edit operation
+    // For demo, just alerting item details
+    alert('Edit: ' + JSON.stringify(item));
+});
+$('#data-table').on('click', '.delete-btn', function() {
+    var index = $(this).closest('tr').data('index');
+    if (confirm('Are you sure you want to delete this item?')) {
+        deleteRow(index);
+    }
+});
+  
+});
     function setActiveButton(buttonId) {
         // Remove 'active' class from all buttons
         $('.creation').removeClass('active'); // Adjust selector to match all buttons you want to control
         // Add 'active' class to the clicked button
         $(buttonId).addClass('active');
     }
-    // $('#btnusercreation').on('submit', function(event) {
-    //     event.preventDefault();
-    //     const UserID = $('#UserID').val();
-    //     const UserName = $('#UserName').val();
-    //     const user = {
-    //       UserID: '123',
-    //       UserName: 'Chandu'
-    //     };
-    //     if (username === user.username && password === user.password) {
-    //     } 
-    //     else {
-    //       alert('Invalid username or password');
-    //     }
-    //   });
+    
 
     
 
