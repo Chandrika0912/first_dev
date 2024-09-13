@@ -1,5 +1,4 @@
 $(document).ready(function() {
-    // var dataArray='';
     $("#accordionExample").hide();
     $("#accordionExample1").hide();
     $("#accordionExample2").hide();
@@ -69,9 +68,8 @@ $(document).ready(function() {
         phoneNumber: $('#Number').val(),
         address: $('#text').val()
         }
-         dataArray = [formData];
+        let dataArray = [formData];
         console.log(dataArray);
-        populateTable() 
 
   });
   var dataArrObj=[

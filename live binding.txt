@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    // var dataArray='';
+var dataArray='';
     $("#accordionExample").hide();
     $("#accordionExample1").hide();
     $("#accordionExample2").hide();
@@ -69,9 +69,8 @@ $(document).ready(function() {
         phoneNumber: $('#Number').val(),
         address: $('#text').val()
         }
-         dataArray = [formData];
+        let dataArray = [formData];
         console.log(dataArray);
-        populateTable() 
 
   });
   var dataArrObj=[
@@ -127,7 +126,7 @@ $(document).ready(function() {
   function populateTable() {
     var $tbody = $('#data-table tbody');
     $tbody.empty(); // Clear existing rows
-    dataArrObj.forEach(function(item, index) {
+    dataArray.forEach(function(item, index) {
         var row = '<tr data-index="' + index + '">' +
                     '<td>' + item.userID + '</td>' +
                     '<td>' + item.userName + '</td>' +
@@ -144,7 +143,7 @@ $(document).ready(function() {
     });
 }
 function addRow(item) {
-    dataArrObj.push(item);
+    dataArray.push(item);
     populateTable();
 }
 function editRow(index, updatedItem) {
