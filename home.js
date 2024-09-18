@@ -13,8 +13,7 @@ $(document).ready(function() {
         $("#accordionExample2").hide();
         $("#accordionExample3").hide();
         $("#accordionExample4").hide();
-        $('#collapseOne').collapse('show');
-        
+        $('#collapseOne').collapse('show');        
     });
     $('#btnareacreation').click(function() {
         setActiveButton('#btnareacreation');
@@ -72,7 +71,6 @@ $(document).ready(function() {
          dataArray = [formData];
         console.log(dataArray);
         populateTable() 
-
   });
   var dataArrObj=[
     {
@@ -143,13 +141,13 @@ $(document).ready(function() {
         $tbody.append(row);
     });
        // Data for dropdowns
-       var arrList = [{ "Id": 'custom', "Name": "" }, { "Id": 1, "Name": "" },
-        { "Id": 2, "Name": "" },
-        { "Id": 3, "Name": "" }, { "Id": 4, "Name": "" }];
-        var arrSubList = [[{ "Id": 'custom', "Name": "Select Division"},{"Id": 1, "Name": "West zone","PopL":"West cluster" }],
-        [{"Id": 'custom', "Name": "Select Division"},{"Id": 1, "Name": "East zone","PopL":"East cluster"}],
-        [{"Id": 'custom', "Name": "Select Division"},{"Id": 1, "Name": "North zone","PopL":"North cluster"}],
-        [{"Id": 'custom', "Name": "Select Division"},{"Id": 1, "Name": "South zone","PopL":"South cluster"}]]
+       var arrList = [{ "Id": 'custom', "Name": "Enter Location/Address" }, { "Id": 1, "Name": "West Division" },
+        { "Id": 2, "Name": "East Division" },
+        { "Id": 3, "Name": "North Division" }, { "Id": 4, "Name": "South Division" }];
+        var arrSubList = [[{ "Id": '1', "Name": "Select Division"},{"Id": 2, "Name": "West zone","name":"West cluster" }],
+        [{"Id": '1', "Name": "Select Division"},{"Id": 2, "Name": "East zone","name":"East cluster"}],
+        [{"Id": '1', "Name": "Select Division"},{"Id": 2, "Name": "North zone","name":"North cluster"}],
+        [{"Id": '1', "Name": "Select Division"},{"Id": 2, "Name": "South zone","name":"South cluster"}]];
         // var arrPopLation=[[{"Id":1,"PopL":"20L"},{"Id":2,"PopL":"25L"},{"Id":3,"PopL":"35L"}]];
         for (var i = 0; i < arrList.length; i++) {
          $("#Division").append('<option value="' + arrList[i].Id + '">' + arrList[i].Name + '</option>');
@@ -180,11 +178,8 @@ $(document).ready(function() {
         $("#SubDivision").change(function () {
          $("#Subcluster").empty();
          for (var i = 0; i < subvalues.length; i++) {
-         $("#Subcluster").append('<option value="' + subvalues[i].Id + '">' + subvalues[i].PopL + '</option>');
+         $("#Subcluster").append('<option value="' + subvalues[i].Id + '">' + subvalues[i].name + '</option>');
          }
-        });
-        $('#txtvalue').keyup(function () {
-         this.value = this.value.match(/^\d+\.?\d{0,2}/);
         });
 }
 function addRow(item) {
