@@ -1,0 +1,73 @@
+java script job roles
+hs developer
+front-end develpoer
+wirdpress developer
+web developer
+full stack developer
+freelancing
+two frames works
+front end
+back end
+front end:
+angular
+react
+vue
+backend
+nodeus
+express
+keystone js
+
+DOM model
+document object model
+when html document is loaded in the browser it becomes a document object. it is the root element that represents the html document
+html DOM is a standard object model and programming interface for html 
+html elements as objects
+the properties of all html elements
+the methods to access all html elements
+the events for all html elements
+data types two types
+primitive non premitive datatype
+primitive data type:
+string
+boolen
+number
+non premitive
+object
+array
+regular class
+variables:
+identifiers
+variables
+identifiers:
+all java script variables,functions,methods must be identified with unique names these are identifiers
+1)names can contain letters,digits,underscores and dollar signs
+2)names must begin with a letter
+3)names can also begin with$ and _(not recommended)
+4)names are case sensitive(y and Y are different variables)
+5)Reserved words(keywords)cannot be used as names
+do's
+Score
+$player1
+Player_2
+donot's
+8thplayer
+Team
+variables:
+variables in javascript are containers that hold reuseable data
+it is the basic unit of storage in a program
+the value stored in a variable can be changed during program execution
+a vaariable is only a name given to a memory location,all the operations done on the variable effects that memory location
+in javascript all the variables must be declared before they can be used
+naming rules for a variable same as constructing names for identifiers
+variable:
+4 ways used
+using var
+using let
+using const
+using nothing
+it can change increment using var and let
+
+
+
+
+

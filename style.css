@@ -1,0 +1,34 @@
+body {
+    font-family: Arial, sans-serif; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    height: 100vh; 
+    margin: 0; 
+    background-image: url("balls.jpg");
+  } 
+  .login-container { 
+    text-align: center; 
+    border: 1px solid #ddd; 
+    padding: 20px; 
+    border-radius: 8px; 
+  } 
+  .login-container input, .login-container button
+  {
+    display: block; 
+    width: 100%; 
+    margin: 10px 0; 
+    padding: 10px; 
+    box-sizing: border-box;
+  } 
+  button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  button:hover {
+    background-color: #0056b3;
+  }
+ 

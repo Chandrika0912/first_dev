@@ -1,0 +1,17 @@
+function createPDF(){
+
+if (document.getElementById("Enter Your First Name").value==""&&document.getElementById("Enter Your Last Name").value){
+    
+alert("please enter all the fields");
+
+
+else {
+    var doc=new jsPDF();
+    doc.text(document.getElementById("Enter Your First Name").value,10,10);
+    doc.text(document.getElementById("Enter Your Last Name").value,10,10);
+
+    doc.save("output.pdf")
+
+}
+}
+}

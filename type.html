@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List  Table</title>
+    <style>
+         ul{
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
+            border: 1px solid gray;
+            background-color: bisque;
+            
+         }
+         li{
+            text-align: center;
+            border-bottom: 1px solid black;
+            
+         }
+         li a{
+            display: block;
+            color: aqua;
+            padding: 8px 16px;
+            text-decoration: none;
+         }
+         li:last-child {
+             border-bottom: none;
+         }
+         li a.active{
+            background-color: blue;
+            color:green;
+         }
+         li a:hover:not(.active) {
+            background-color: blanchedalmond;
+             color: white;
+         }
+    </style>
+</head>
+<body>
+    <h2>List Table</h2>
+    <ul>
+        <li><a href="#Home">Home</a></li>
+        <li><a href="#Contact Us">Contact Us</a></li>
+        <li><a href="#About">About</a></li>
+        <li><a href="#News">News</a></li>
+    </ul>
+</body>
+</html>

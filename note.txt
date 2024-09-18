@@ -1,0 +1,38 @@
+arithmatic operators
+--------
++
+-
+*
+/
+%
+-(negate)
+post increment a++
+pre increment a--
+---------------------------
+comparision operators
+-------
+a==b
+if incase a=5&b=5 is there it can be true statement
+a!=b(a not equal to b)
+if incase a=5&b=5 is there then it can be false statement
+a>b(a greater than b)
+if incase a=6&b=5 is there then it can be true statement
+a>=b
+if incase a=5&b=5 is there it can be true statement
+a<b
+if incase a=5&b=6 is there then it can be true statement
+a<=b
+---------------------------------
+logical operators
+----
+a&&b AND if both sides are same then it will be true
+a||b OR true of either or both are true
+!a NOT true if a is false
+-----
+assignment operators
+---------
+#--class
+.---id use
+
+
+

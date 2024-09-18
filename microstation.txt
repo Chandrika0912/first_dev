@@ -1,0 +1,29 @@
+microstation  software
+step 1
+registration
+next click on files and then click on new file dgn later
+give that file name later select seed file
+2d and 3d both will be there in 2d english general dgn
+and 2d metric general dgn then projects then examples then general then 2dmetric general dgn 
+if you can draw the line you can use tool place smart line in that tool we can you draw a line 
+in that place smart line there are different place smart lines
+this is main tool bar apart from 3 toolbars are there
+1)standard toolbar
+2)primary toolbar
+3)attributes toolbar
+apart this two floating toolbars
+1)element selection toolbar
+2)Accu draw 
+select the tools option
+right click button use reset or accept
+undo-ctrl+z
+redo-ctrl+r
+update view
+rotate view 
+fit view
+pan view
+window area
+zoom in
+zoom out
+update view
+

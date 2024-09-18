@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        body{
+            background-color: white;
+        }
+        .header{
+            background-color: aqua;
+            color:blue;
+            padding:15px;
+        }
+        .Footer{
+            background-color: aqua;
+            color:blue;
+            padding:15px;
+        }
+        .column{
+            float: left;
+            padding: 15px;
+        }
+        .clearfix::after{
+            content: "";
+            clear:both;
+            display: table;
+        }
+        .menu{
+            width:25%;
+        }
+        .content{
+            width: 25%;
+        }
+        .menu ul{
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+        .menu li{
+            padding: 8px;
+            margin-bottom: 8px;
+            background-color: blanchedalmond;
+            color: aqua;
+        }
+        .menu li:hover {
+            background-color: aqua;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>hyd</h1>
+    </div>
+    <div class="clearfix">
+      <div class="column menu">
+         <ul>
+                <li>Flight</li>
+                <li>City</li>
+                <li>Island</li>
+        </ul>
+     </div>
+    </div>
+</div>
+<div class="column content">
+    <h1>city</h1>
+    <p>vizag is the best tourism now a days.vizag surrounding so many places are there</p>
+</div>
+</div>
+<div class="Footer">
+    <p>vizag</p>
+</div>
+
+</body>
+</html>

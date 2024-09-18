@@ -1,0 +1,13 @@
+<html>
+<head>
+<body>
+<p id="chandu"></p>
+<script>
+const pi=3.14;
+const radius=15;
+const area=pi*radius*radius;
+document.getElementById("chandu").innerHTML=area;
+</script>
+</body>
+</head>
+</html>

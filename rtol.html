@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body onload="animation()">
+    <p>chandrika</p>
+    </body>
+    <script>
+        function animation() {
+
+var text = document.getElementsByTagName("p")[0].innerHTML;
+
+setInterval(function() {
+
+  text = text[text.length - 1] + text.substring(0, text.length - 1);
+  document.getElementsByTagName("p")[0].innerHTML = text;
+
+}, 100);
+
+}
+    </script>
+</html>

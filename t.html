@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <form id="registrationForm">
+            <h2>Registration Form</h2>
+            <div class="form-group">
+                <label for="name">Name:</label><br>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label><br>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label><br>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <div class="form-group">
+                <label for="age">Age</label><br>
+                <input type="number" id="number" name="Age" required>
+                <div class="form-group">
+                    <label for="gender">Gender</label><br>
+                    <input type="radio" id="Male" value="Male" required>
+                    <label for="Male">Male</label>
+                    <input type="radio" id="Female" value="Female" required>
+                    <label for="Female">Female</label>
+                </div>
+                <div class="form-group">
+                    <label for="Phone Number">Phone Number</label><br>
+                    <input type="number" id="number" name="Phone Number" required>
+
+                </div>
+
+            </div>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

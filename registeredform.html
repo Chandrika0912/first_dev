@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+
+<head>
+
+<title>Registration Form</title>
+
+<style>
+
+body{
+
+  background-color:gray;
+
+  text-align: center;
+
+}
+
+#Click{
+
+  background-color:blueviolet;
+
+}
+
+.container{
+
+  padding: 10px;
+
+  border-radius: 5px;
+
+  font-size:20px;
+
+  margin-top: 3px;
+
+   border:1px solid gray;
+
+}
+
+.input-group input{
+
+  border-radius: 5px;
+
+  font-size:20px;
+
+  margin-top:3px;
+
+  padding:10px;
+
+  border:1px solid gray;
+
+}
+
+label {
+
+  font-size: 20px;
+
+}
+
+h2{
+
+  color: aqua;
+
+}
+
+</style>
+
+<body>
+
+<h2>Student Registration Form</h2>
+
+<form id="RegistrationForm">
+
+  <div class="input-group">
+
+    <label>First Name:</label>
+
+    <input id="text" placeholder="Enter Your First Name">
+
+  </div>
+
+  <div class="input-group">
+
+    <label>Last Name:</label>
+
+    <input type="text" placeholder="Enter Your Last Name">
+
+  </div>
+
+  <div class="input-group">
+
+    <label>Date of Birth:</label>
+
+    <input type="date" name="Date of Birth">
+
+  </div>
+
+  <div class="input-group">
+
+    <label>Email Id:</label>
+
+    <input type="text" placeholder="Enter Your Email Id">
+
+  </div>
+
+  <div class="input-group">
+
+    <label>Mobile No.:</label>
+
+    <input id="number" type="number" placeholder="Enter Your Mobile No">
+
+  </div>
+
+  <div class="container">
+
+      <label>Gender:</label>
+
+      <input type="radio" id="Male">
+
+      <label for="Male">Male</label>
+
+      <input type="radio" id="Female">
+
+      <label for="Female">Female</label>
+
+  </div>
+
+  <div class="container">
+
+      <label>Contry:</label>
+
+      <select name="Contry" id="Contry">
+
+        <option value="Choose Contry">Choose Contry</option>
+
+        <option value="Africa">Africa</option>
+
+        <option value="Bangladesh">Bangladesh</option>
+
+        <option value="South Africa">South Africa</option>
+
+        <option value="India">India</option>
+
+        <option value="Ireland">Ireland</option>
+
+      </select>
+
+  </div>
+
+  <div class="container">
+
+      <label>State:</label>
+
+      <select name="State" id="State">
+
+        <option value="Choose State">Choose State</option>
+
+        <option value="Andhra Pradesh">Andhra Pradesh</option>
+
+        <option value="Telangana">Telangana</option>
+
+        <option value="Bihar">Bihar</option>
+
+        <option value="Machilipatnam">Machilipatnam</option>
+
+      </select>
+
+  </div>
+
+  <div class="input-group">
+
+    <label>Address:</label>
+
+    <input type="text" placeholder="Enter Your Address">
+
+  </div>
+
+  <div class="input-group">
+
+    <label>Pincode:</label>
+
+    <input id="number" type="number" placeholder="Enter Pincode">
+
+  </div>
+
+  <div class="input-group">
+
+    <label>City:</label>
+
+    <input id="text" placeholder=" Enter Your City">
+
+  </div>
+
+  <div class="container">
+
+    <form>
+
+      <label>District:</label>
+
+      <select name="District" id="District">
+
+        <option value="Choose Your District">Choose Your District</option>
+
+        <option value="Eluru">Eluru</option>
+
+        <option value="Guntur">Guntur</option>
+
+        <option value="Machilipatnam">Machilipatnam</option>
+
+        <option value="Krishna">Krishna</option>
+
+      </select>
+
+    </form>
+
+  </div>
+
+  <div class="input-group">
+
+    <label>Hobbies:</label>
+
+    <input id="text" placeholder="Enter Your Hobbies">
+
+  </div>
+
+  <button id="Click">Submit</button>
+
+</form>
+
+</head>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  <script>
+
+   $(document).ready(function () {
+
+    $('#RegistrationForm').on('submit', function (e) {
+
+      e.preventDefault();
+
+      const formData = {
+
+        FirstName: $('#text').val(),
+
+        LastName: $('input[type="text"]').eq(1).val(),
+
+        DateofBirth: $('input[type="date"]').val(),
+
+        email: $('input[type="text"]').eq(1).val(),
+
+        mobile: $('#number').val(),
+
+        gender: $('input[type="radio"]:checked').val(),
+
+        Contry: $('#Contry').val(),
+
+        State: $('#State').val(),
+
+        address: $('input[type="text"]').eq(2).val(),
+
+        Pincode: $('input[type="number"]').eq(1).val(),
+
+        City: $('input[type="text"]').eq(3).val(),
+
+        District: $('#District').val(),
+
+        Hobbies: $('input[type="text"]').eq(4).val(),
+
+      };
+
+      console.log(formData);
+
+    })
+
+  });
+
+</script>
+
+</body>
+
+</html>

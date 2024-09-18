@@ -142,6 +142,50 @@ $(document).ready(function() {
                   '</tr>';
         $tbody.append(row);
     });
+       // Data for dropdowns
+       var arrList = [{ "Id": 'custom', "Name": "" }, { "Id": 1, "Name": "" },
+        { "Id": 2, "Name": "" },
+        { "Id": 3, "Name": "" }, { "Id": 4, "Name": "" }];
+        var arrSubList = [[{ "Id": 'custom', "Name": "Select Division"},{"Id": 1, "Name": "West zone","PopL":"West cluster" }],
+        [{"Id": 'custom', "Name": "Select Division"},{"Id": 1, "Name": "East zone","PopL":"East cluster"}],
+        [{"Id": 'custom', "Name": "Select Division"},{"Id": 1, "Name": "North zone","PopL":"North cluster"}],
+        [{"Id": 'custom', "Name": "Select Division"},{"Id": 1, "Name": "South zone","PopL":"South cluster"}]]
+        // var arrPopLation=[[{"Id":1,"PopL":"20L"},{"Id":2,"PopL":"25L"},{"Id":3,"PopL":"35L"}]];
+        for (var i = 0; i < arrList.length; i++) {
+         $("#Division").append('<option value="' + arrList[i].Id + '">' + arrList[i].Name + '</option>');
+        }
+        var SubDivision;
+        $("#Division").change(function () {
+         $("#SubDivision").empty();
+         var selectedValue = parseFloat($("#Division").val());
+         SubDivision = '';
+         if (selectedValue == 1) {
+         subvalues = arrSubList[0];
+         }
+         else if (selectedValue == 2) {
+         subvalues = arrSubList[1];
+         }
+         else if (selectedValue == 3) {
+         subvalues = arrSubList[2];
+         }
+         else if (selectedValue == 4) {
+           subvalues = arrSubList[3];
+           }
+         for (var i = 0; i < subvalues.length; i++) {
+         $("#SubDivision").append('<option value="' + subvalues[i].Id + '">' + subvalues[i].Name + '</option>');
+         //$("#ddlPopulation").append('<option value="' + subvalues[i].Id + '">' + subvalues[i].PopL + '</option>');
+         }
+         $("#SubDivision").val('1').trigger('change');
+        });
+        $("#SubDivision").change(function () {
+         $("#Subcluster").empty();
+         for (var i = 0; i < subvalues.length; i++) {
+         $("#Subcluster").append('<option value="' + subvalues[i].Id + '">' + subvalues[i].PopL + '</option>');
+         }
+        });
+        $('#txtvalue').keyup(function () {
+         this.value = this.value.match(/^\d+\.?\d{0,2}/);
+        });
 }
 function addRow(item) {
     dataArrObj.push(item);
@@ -170,8 +214,7 @@ $('#data-table').on('click', '.delete-btn', function() {
     if (confirm('Are you sure you want to delete this item?')) {
         deleteRow(index);
     }
-});
-  
+});  
 });
     function setActiveButton(buttonId) {
         // Remove 'active' class from all buttons
@@ -179,10 +222,3 @@ $('#data-table').on('click', '.delete-btn', function() {
         // Add 'active' class to the clicked button
         $(buttonId).addClass('active');
     }
-    
-
-    
-
-    
-
-

@@ -1,0 +1,29 @@
+number reverse in java script
+------
+example
+var num1=231
+var result=num1.toString().split(").reverse().join(")
+console.log(result)
+-----------------------------------------------------
+alphabet order in java script
+------
+example
+let firstName="master"
+let finalValue=firstname.toString().split(").sort().join(")
+console.log(finalValue)
+-----------------------------------------------------
+current Date
+-----
+example
+var today=new Date();
+var dd=today.getDate();
+var mm=today.getmonth()+1;
+var yyyy=today.getFullYear();
+if(dd <=10){
+dd=0+dd;
+}
+if(mm<10){
+mm=0+mm;
+}
+var today1=mm+"_"+dd+"-"+yyyy;
+document.write(today1);

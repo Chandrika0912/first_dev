@@ -1,0 +1,11 @@
+<html>
+<head>
+<body>
+<p id="chandu"></p>
+<script>
+var total=(360*5)+((40/8)-9)-((14*6)/2);
+document.getElementById("chandu").innerHTML=total;
+</script>
+</body>
+</head>
+</html>

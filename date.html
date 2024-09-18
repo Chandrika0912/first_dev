@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Today date</title>
+</head>
+<body>
+    <h2>today Date</h2>
+    <p id="chandu"></p>
+    <script>
+        var today=new Date()                                                    
+         var dd=today.getDate()
+         var mm=today.getMonth()+1;
+         var yyyy=today.getFullYear()
+
+         if(dd<10){
+            dd=0+dd;
+         }
+         if(mm<10){
+            mm=0+mm;
+         }
+         today=dd+'/'+mm+'/'+yyyy;
+         document.write(today);
+
+    </script><br><br>
+    <button type="button" onclick="document.getElementById('chandu').innerHTML=Date()"> click</button>
+</body>
+</html>                                                   

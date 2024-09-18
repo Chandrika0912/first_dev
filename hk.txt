@@ -1,0 +1,166 @@
+<title>Home Page</title>
+</header>
+
+<style>
+  #logoutBtn {
+    font-size: 18px; 
+    padding: 10px 20px; 
+    border-radius: 5px; 
+    background-color: #007bff; 
+    color: white; 
+    border: none;
+    cursor: pointer; 
+  }
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #f8f9fa;
+  }
+  .navbar .container-fluid {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+  }
+  .navbar .d-flex {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .navbar .photo {
+    width: 46px;
+    margin-right: 15px;
+  }
+  .navbar h2 {
+    margin: 0;
+    flex: 1;
+    text-align: center;
+  }
+  .navbar #logoutBtn {
+    background-color: #007bff; 
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+</style>
+<body>
+  <div class="home-container" >
+    <nav class="navbar bg-body-tertiary">
+        <div class="container-fluid">
+          <form class="d-flex" role="search">
+            <img src="photos.png" alt="photo" class="photo" style="width: 46px;">
+            <h2>Project Name</h2>
+            <button id="logoutBtn">Logout</button>
+          </form>
+        </div>
+      </nav>
+      <br>
+      <div>
+        <div class="accordion1">
+          <div class="accordion1-content">
+             <header>
+                 <nav class="navbar">
+                     <span class="accordion1-content-title">
+                         User creation
+                     </span>
+                     <i class="fa-solid fa-plus" style="margin-right: 734px;"></i>
+                 </nav>
+             </header>
+                <!-- #region -->
+                 <div class="container text-center">
+                     <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3" style="margin-bottom: -14px;">
+                         <div class="accordion1-content-description">
+                             <label for="User ID">User ID:</label>
+                             <input type="text" id="name" placeholder="User ID">
+                         </div>
+                          <div class="accordion1-content-description">
+                             <label for="User Name">User Name:</label>
+                             <input type="text" id="User Name" placeholder="User Name">
+                         </div>
+                       <div class="accordion1-content-description">
+                             <label for="Role Name">Role Name:</label>
+                             <select>
+                                 <option>--select your Role</option>
+                                 <option value="Assistant Engineer">Assistant Engineer</option>
+                                 <option value="Sr.Engineer">Sr.Engineer</option>
+                                 <option value="Radiology Engineer">Radiology Engineer</option>
+                             </select>
+                         </div>
+                           <div class="accordion1-content-description">
+                             <label for="Company code">Company code:</label>
+                             <select>
+                                 <option>--select code--</option>
+                                 <option value="R13">R13</option>
+                                 <option value="R16">R16</option>
+                                 <option value="R19">R19</option>
+                                 <option value="R21">R21</option>
+                             </select>
+                         </div>
+                         <div class="accordion1-content-description">
+                             <label for="Division">Division:</label>
+                             <select>
+                                 <option>--select Division--</option>
+                                 <option value="West Division">West Division</option>
+                                 <option value="East Division">East Division</option>
+                                 <option value="North Division">North Division</option>
+                                 <option value="South Division">South Division</option>
+                             </select>
+                         </div>
+                         
+                  <div class="accordion1-content-description">
+                             <label for="Sub Division">Sub Division:</label>
+                             <select>
+                                 <option>--select sub division--</option>
+                                 <option value="west zone">west zone</option>
+                                 <option value="east zone">east zone</option>
+                                 <option value="north zone">north zone</option>
+                                 <option value="south zone">south zone</option>
+                             </select>
+                         </div>                         <div class="accordion1-content-description">
+                             <label for="Password">password:</label>
+                             <input type="password" id="password" placeholder="password">
+                         </div>
+                               <div class="accordion1-content-description">
+                             <label for="Email">Email:</label>
+                             <input type="Email" id="Email" placeholder="Eg:abc@gmail.com">
+                         </div>
+                         <div class="accordion1-content-description">
+                             <label for="Phone Number">Phone Number:</label>
+                             <input type="Number" id="Number" placeholder="Eg:912345xxxx">
+                         </div>
+                         <div class="accordion1-content-description">
+                             <label>Address:</label>
+                             <input type="text" id="text" placeholder="">
+                         </div>
+                         <!-- <div class="accordion1-content-description">
+                             <label for="Status" style="margin-bottom: 38px;">Status:</label>
+                             <select>
+                                 <option>--select your Status</option>
+                                 <option value="Active">Active</option>
+                                 <option value="Close">Close</option>
+                             </select>
+                         </div>  -->
+                     </div> 
+                 <!-- #endregion -->
+         
+             </div>
+ 
+         </div>
+      </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+  <script>
+    document.getElementById('logoutBtn').addEventListener('click', function() { 
+    });
+    
+  </script>
+
+</body>
+
+</html>

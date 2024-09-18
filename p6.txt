@@ -1,0 +1,10 @@
+<html>
+<head>
+<body>
+<script>
+stumarks=[65,75,80,87,90]
+document.getElememtById("chandu").innerHTML=stumarks;
+</script>
+</body>
+</head>
+</html>

@@ -1,0 +1,90 @@
+while loop:
+---------------
+evaluates the condition before the code is executed.
+do-while:
+--------
+evaluates the condition after the code block is executed.
+the if/else statement executes a block of code if a specified condition is true
+if the condition is false, another block of code can be executed.
+* the if/else statement is part of javascript conditional statements, which are used to different actions on different conditions
+* use if to specify block of code to be executed if a specified condition is true.
+*use else to specify a block of code to be executed, if the same condition is false
+use else if to specify a new condition to test,if the first condition is false.
+use else if to specify a new condition to test, if the first condition is false.
+use switch to select one of many blocks of code to be executed.
+parameters means some conditions
+----------------------
+javascript loop statements:
+break-breaks out of a loop
+continue-skips a value in a loop
+while-loops a code block while condition is true
+do-while-loop a code block once& then while a condition is true.
+for-loops a code block while condition is true.
+for-of: loop the values of any iterable
+for-in: loops the properties of an object.
+java script statements:
+----------
+break,class,const,continue,debugger,do..while,for,for in,for of,function,if-else,let,return,switch,throw,try catch,var,while.
+Array of for each:
+-----
+the for each () method calls a function(a callback function) once for each array element.
+loops:
+---
+loops can execute a block of code as long as specified condition is true.
+for of:
+--
+the javascript for of statement loop through the values of an iterable object.
+it lets you loop over iterable data structures such as array, strings, maps, nodelists and more.
+variable:
+-------------
+for every iteration the value of the next property is assigned to the variable.
+variables are declared const, let or var
+iterable:An object that has iterable properties.
+key vallue loop in javascript:
+javascript allows developers to access & manipulate each key-value pair contained withinthe object.
+why to use key value in javascript?
+to access& manipulate the values stored in the object.
+for example:-
+for(var k in target){
+if(target.hasown property(k)){
+alert("key is"+k+", value is+target[k]);}}
+* table index in java:
+a table index in java is a data structure that improves the performance of database queries.By provinding a more efficient way to locate data.
+Indexs are created on one or more columns of a table:
+------------
+1)b-trees index
+2)hash index
+And they store the values of those columns in a stored order.
+this allows the database to quickly find the rows that match a given query condition
+*Table index in java:
+---------
+Is a copy of selected columns of data from table that is designed to enable very efficient search.
+java script function bind():
+----
+*Function Borrowing:
+----
+with the bind method an object can barrow a method from another object.The bind() method solves this problems.
+Sometimes the bind method has to be used to prevent losing this
+when a function is used as a callback, this is lost
+what is this?
+in js the this keyword refers to an object
+this
+1)refers to the object
+2)global object
+3)in a function this refers to the global object
+4)in a function in strike mode this is undefined
+5)in a event this refers to the element that received the event
+6)method like call(),apply(),bind() can refer this to any object
+Note:
+--------
+this is a not a variable
+it is a keyword
+you cannot change the value of this
+variables created without a declaration keyword (var, let or const) are always global even if they are created inside a function.
+Note:
+Array index start with  0
+[0] is the 1st element
+[1] is the 2nd element
+
+
+  

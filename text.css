@@ -1,0 +1,115 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f0f0f0;
+}
+
+header {
+    background: #333;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+}
+
+header .logo {
+    margin: 0;
+}
+
+header .navigation {
+    margin-top: 10px;
+}
+
+header .navigation a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 15px;
+}
+
+header .navigation .btnlogin-popup {
+    background: #fff;
+    color: #333;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    position: relative;
+}
+
+.form-box {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+}
+
+.form-box.active {
+    display: block;
+}
+
+.input-box {
+    margin-bottom: 15px;
+    position: relative;
+}
+
+.input-box .icon {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    color: #888;
+}
+
+.input-box input {
+    width: 100%;
+    padding: 10px 30px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.input-box label {
+    position: absolute;
+    top: 0;
+    left: 10px;
+    padding: 10px 0;
+    pointer-events: none;
+    color: #888;
+}
+
+.remember-forgot {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.btn {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    background: #333;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.login-register {
+    text-align: center;
+}
+
+.login-register a {
+    color: #333;
+    text-decoration: none;
+    font-weight: bold;
+}

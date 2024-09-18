@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rotate to Right</title>
+</head>
+<body onload="animation()">
+    <p id="W3Resource">resource</p>
+    </body>
+    <script>
+        function animate_string(id){
+            var element = document.getElementById(id);
+            var textNode = element.childNodes[0]; // assuming no other children
+            var text = textNode.data;
+            
+            setInterval(function () 
+            {
+                text = text[text.length - 1] + text.substring(0, text.length - 1);
+                document.getElementsByTagName("id")[0].innerHTML = text;
+            }, 100);
+        }
+        </script>
+</html>

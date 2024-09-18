@@ -1,0 +1,120 @@
+$(document).ready(function () {
+
+    function initializeTable() {
+        const students = JSON.parse(localStorage.getItem('students')) || [];
+        students.forEach(student => addStudentToTable(student));
+    }
+
+    $('#registrationForm').on('submit', function (e) {
+        e.preventDefault();
+        const photoFile = $('#photo')[0].files[0];
+        const documentFile = $('#file')[0].files[0];
+
+        const formData = {
+            fullname: $('#name').val(),
+            fatherName: $('#fname').val(),
+            motherName: $('#mname').val(),
+            DateofBirth: $('#DOB').val(),
+            AadharNo: $('#aadharNo').val(),
+            email: $('#email').val(),
+            mobile: $('#ph').val(),
+            gender: $('input[name="gender"]:checked').val(),
+            address: $('#address').val(),
+            photo: photoFile ? URL.createObjectURL(photoFile) : '',
+            file: documentFile ? URL.createObjectURL(documentFile) : ''
+        };
+
+        addStudentToTable(formData);
+        saveStudentToLocalStorage(formData);
+        $('#registrationForm')[0].reset();
+    });
+
+    function addStudentToTable(student) {
+        const tableBody = $('#RegistrationTableBody');
+        const row = `
+      <tr>
+        <td>${student.fullname}</td>
+        <td>${student.fatherName}</td>
+        <td>${student.motherName}</td>
+        <td>${student.DateofBirth}</td>
+        <td>${student.AadharNo}</td>
+        <td>${student.email}</td>
+        <td>${student.mobile}</td>
+        <td>${student.gender}</td>
+        <td>${student.address}</td>
+        <td><a href="${student.photo}" target="_blank">View Photo</a></td>
+        <td><a href="${student.file}" target="_blank">View File</a></td>
+        <td>
+          <button class="edit-btn">Edit</button>
+          <button class="delete-btn">Delete</button>
+        </td>
+      </tr>`;
+        tableBody.append(row);
+    }
+
+    function saveStudentToLocalStorage(student) {
+        const students = JSON.parse(localStorage.getItem('students')) || [];
+        students.push(student);
+        localStorage.setItem('students', JSON.stringify(students));
+    }
+
+    $('#RegistrationTableBody').on('click', '.edit-btn', function () {
+        const row = $(this).closest('tr');
+        const student = {
+            fullname: row.find('td:eq(0)').text(),
+            fatherName: row.find('td:eq(1)').text(),
+            motherName: row.find('td:eq(2)').text(),
+            DateofBirth: row.find('td:eq(3)').text(),
+            AadharNo: row.find('td:eq(4)').text(),
+            email: row.find('td:eq(5)').text(),
+            mobile: row.find('td:eq(6)').text(),
+            gender: row.find('td:eq(7)').text(),
+            address: row.find('td:eq(8)').text(),
+            photo: row.find('td:eq(9) a').attr('href'),
+            file: row.find('td:eq(10) a').attr('href')
+        };
+
+        $('#name').val(student.fullname);
+        $('#fname').val(student.fatherName);
+        $('#mname').val(student.motherName);
+        $('#DOB').val(student.DateofBirth);
+        $('#aadharNo').val(student.AadharNo);
+        $('#email').val(student.email);
+        $('#ph').val(student.mobile);
+        $(input[name="gender"][value="${student.gender}"]).prop('checked', true);
+        $('#address').val(student.address);
+        $('#photo').val('');
+        $('#file').val('');
+
+        removeStudentFromLocalStorage(student);
+        row.remove();
+    });
+
+    $('#RegistrationTableBody').on('click', '.delete-btn', function () {
+        const row = $(this).closest('tr');
+        const student = {
+            fullname: row.find('td:eq(0)').text(),
+            fatherName: row.find('td:eq(1)').text(),
+            motherName: row.find('td:eq(2)').text(),
+            DateofBirth: row.find('td:eq(3)').text(),
+            AadharNo: row.find('td:eq(4)').text(),
+            email: row.find('td:eq(5)').text(),
+            mobile: row.find('td:eq(6)').text(),
+            gender: row.find('td:eq(7)').text(),
+            address: row.find('td:eq(8)').text(),
+            photo: row.find('td:eq(9) a').attr('href'),
+            file: row.find('td:eq(10) a').attr('href')
+        };
+
+        removeStudentFromLocalStorage(student);
+        row.remove();
+    });
+
+    function removeStudentFromLocalStorage(student) {
+        let students = JSON.parse(localStorage.getItem('students')) || [];
+        students = students.filter(s => s.email !== student.email);
+        localStorage.setItem('students', JSON.stringify(students));
+    }
+
+    initializeTable();
+});
