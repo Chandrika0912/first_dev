@@ -72,6 +72,34 @@ $(document).ready(function() {
         console.log(dataArray);
         populateTable() 
   });
+  $('#btnClear').on('click', function() {
+    let formData = {
+        userID: $('#name').val(),
+        userName: $('#UserName').val(),
+        roleName: $('select').eq(0).val(),
+        companyCode: $('select').eq(1).val(),
+        division: $('select').eq(2).val(),
+        subDivision: $('select').eq(3).val(),
+        password: $('#password').val(),
+        email: $('#Email').val(),
+        phoneNumber: $('#Number').val(),
+        address: $('#text').val()
+    };
+    console.log(formData);
+    // Clear the form inputs
+    $('#name').val('').prop('disabled', false);
+    $('#UserName').val('');
+    $('select').eq(0).val('');
+    $('select').eq(1).val('');
+    $('select').eq(2).val('');
+    $('select').eq(3).val('');
+    $('#password').val('');
+    $('#Email').val('');
+    $('#Number').val('');
+    $('#text').val('');
+
+    populateTable();
+ });     
   var dataArrObj=[
     {
         "userID": "123",
@@ -87,7 +115,7 @@ $(document).ready(function() {
     },
     {
         "userID": "23",
-        "userName": "jhkjhk",
+         "userName": "jhkjhk",
         "roleName": "Assistant Engineer",
         "companyCode": "R16",
         "division": "West Division",
@@ -121,7 +149,41 @@ $(document).ready(function() {
         "phoneNumber": "4564543654364",
         "address": "khjkjhk jkjhk"
     }
-]
+ ]
+ function populateTable() {
+    const tbody = $('#data-table tbody');
+    tbody.empty();
+    dataArrObj.forEach((user, index) => {
+        const row = `
+            <tr data-index="${index}">
+                <td>${user.userID}</td>
+                <td>${user.userName}</td>
+                <td>${user.roleName}</td>
+                <td>${user.companyCode}</td>
+                <td>${user.division}</td>
+                <td>${user.subDivision}</td>
+                <td>${user.password}</td>
+                <td>${user.email}</td>
+                <td>${user.phoneNumber}</td>
+                 <td>${user.address}</td>
+                <td><button class="edit-btn">Edit</button></td>
+            </tr>`;
+        tbody.append(row);
+    });
+ }
+ function editUser(index) {
+    const user = dataArrObj[index];
+    $('#name').val(user.userID).prop('disabled', true);
+    $('#UserName').val(user.userName);
+    $('#roleName').val(user.roleName);
+    $('#companyCode').val(user.companyCode);
+    $('#division').val(user.division);
+    $('#subDivision').val(user.subDivision);
+    $('#password').val(user.password);
+    $('#Email').val(user.email);
+    $('#Number').val(user.phoneNumber);
+    $('#text').val(user.address);
+ }
   function populateTable() {
     var $tbody = $('#data-table tbody');
     $tbody.empty(); // Clear existing rows
@@ -141,13 +203,13 @@ $(document).ready(function() {
         $tbody.append(row);
     });
        // Data for dropdowns
-       var arrList = [{ "Id": 'custom', "Name": "Enter Location/Address" }, { "Id": 1, "Name": "West Division" },
+       var arrList = [ { "Id": 1, "Name": "West Division" },
         { "Id": 2, "Name": "East Division" },
         { "Id": 3, "Name": "North Division" }, { "Id": 4, "Name": "South Division" }];
-        var arrSubList = [[{ "Id": '1', "Name": "Select Division"},{"Id": 2, "Name": "West zone","name":"West cluster" }],
-        [{"Id": '1', "Name": "Select Division"},{"Id": 2, "Name": "East zone","name":"East cluster"}],
-        [{"Id": '1', "Name": "Select Division"},{"Id": 2, "Name": "North zone","name":"North cluster"}],
-        [{"Id": '1', "Name": "Select Division"},{"Id": 2, "Name": "South zone","name":"South cluster"}]];
+        var arrSubList = [[{ "Id": '1', "Name": "Select Sub Division","name":"Select Subcluster"},{"Id": 2, "Name": "West zone","name":"West cluster" }],
+        [{"Id": '1', "Name": "Select Sub Division","name":"Select Subcluster"},{"Id": 2, "Name": "East zone","name":"East cluster"}],
+        [{"Id": '1', "Name": "Select Sub Division","name":"Select Subcluster"},{"Id": 2, "Name": "North zone","name":"North cluster"}],
+        [{"Id": '1', "Name": "Select Sub Division","name":"Select Subcluster"},{"Id": 2, "Name": "South zone","name":"South cluster"}]]
         // var arrPopLation=[[{"Id":1,"PopL":"20L"},{"Id":2,"PopL":"25L"},{"Id":3,"PopL":"35L"}]];
         for (var i = 0; i < arrList.length; i++) {
          $("#Division").append('<option value="' + arrList[i].Id + '">' + arrList[i].Name + '</option>');
@@ -156,7 +218,7 @@ $(document).ready(function() {
         $("#Division").change(function () {
          $("#SubDivision").empty();
          var selectedValue = parseFloat($("#Division").val());
-         SubDivision = '';
+         subvalues = '';
          if (selectedValue == 1) {
          subvalues = arrSubList[0];
          }
@@ -181,36 +243,38 @@ $(document).ready(function() {
          $("#Subcluster").append('<option value="' + subvalues[i].Id + '">' + subvalues[i].name + '</option>');
          }
         });
-}
-function addRow(item) {
+        // $('#txtvalue').keyup(function () {
+        //  this.value = this.value.match(/^\d+\.?\d{0,2}/);
+        // });
+        function deleteRow(index) {
+            dataArrObj.splice(index, 1);
+            populateTable(); 
+        }
+        $('#data-table').on('click', '.delete-btn', function() {
+            var index = $(this).closest('tr').data('index');
+            if (confirm('Are you sure you want to delete this item?')) {
+                deleteRow(index);
+            }
+        });
+ }
+ function addRow(item) {
     dataArrObj.push(item);
     populateTable();
-}
-function editRow(index, updatedItem) {
+ }
+ function editRow(index, updatedItem) {
     dataArrObj[index] = updatedItem;
     populateTable();
-}
-function deleteRow(index) {
-    dataArrObj.splice(index, 1);
-    populateTable();
-}
+ }
 // Initial table population
 populateTable();
 // Handle Edit and Delete
+
 $('#data-table').on('click', '.edit-btn', function() {
     var index = $(this).closest('tr').data('index');
-    var item = dataArrObj[index];
-    // Logic to handle edit operation
-    // For demo, just alerting item details
-    alert('Edit: ' + JSON.stringify(item));
-});
-$('#data-table').on('click', '.delete-btn', function() {
-    var index = $(this).closest('tr').data('index');
-    if (confirm('Are you sure you want to delete this item?')) {
-        deleteRow(index);
-    }
-});  
-});
+    editUser(index);
+ });
+ });
+
     function setActiveButton(buttonId) {
         // Remove 'active' class from all buttons
         $('.creation').removeClass('active'); // Adjust selector to match all buttons you want to control

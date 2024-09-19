@@ -101,7 +101,10 @@
             class="sFlh5c FyHeAf" alt="DORSU - BSES GreenPulse | Mati" jsname="JuXqh"
             style="max-width: 1429px; width: 68px; height: 68px; margin: 0px;" data-ilt="1725952568621">
           <h2>Clamp</h2>
-          <button id="General Admin">General Admin</button>
+          <button id="General Admin">General Admin
+            <img src="https://e7.pngegg.com/pngimages/636/819/png-clipart-computer-icons-privacy-policy-admin-icon-copyright-rim-thumbnail.png" jsaction="" 
+            class="sFlh5c FyHeAf iPVvYb" style="max-width: 275px; height: 62px; margin: 0px; width: 47px;" alt="Admin png images | PNGEgg" jsname="kn3ccd" aria-hidden="false">
+          </button>
         </form>
       </div>
     </nav>
@@ -157,7 +160,7 @@
                       </div>
                       <div class="accordion1-content-description">
                         <label for="Role Name">Role Name:</label>
-                        <select>
+                        <select id="roleName">
                           <option>--select your Role</option>
                           <option value="Assistant Engineer">Assistant Engineer</option>
                           <option value="Sr.Engineer">Sr.Engineer</option>
@@ -166,7 +169,7 @@
                       </div>
                       <div class="accordion1-content-description">
                         <label for="Company code">Company code:</label>
-                        <select>
+                        <select id="companyCode">
                           <option>--select code--</option>
                           <option value="R13">R13</option>
                           <option value="R16">R16</option>
@@ -176,7 +179,7 @@
                       </div>
                       <div class="accordion1-content-description">
                         <label for="Division">Division:</label>
-                        <select>
+                        <select id="division">
                           <option>--select Division--</option>
                           <option value="West Division">West Division</option>
                           <option value="East Division">East Division</option>
@@ -186,7 +189,7 @@
                       </div>
                       <div class="accordion1-content-description">
                         <label for="Sub Division">Sub Division:</label>
-                        <select>
+                        <select id="subDivision">
                           <option>--select sub division--</option>
                           <option value="west zone">west zone</option>
                           <option value="east zone">east zone</option>
@@ -270,35 +273,23 @@
                 <div class="accordion-body" style="height: 214px; border:2px solid gray;border-radius:0.5rem;">
                   <div class="container text-center">
                     <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3" style="margin-bottom: -14px; margin-top:31px;">
-                      <div class="accordion1-content-description">
+                      <div class="accordion1-content-description" style="width: 150px;">
                         <label for="Division">Division:</label>
-                        <select id="Division">
-                            <option value="0">--select Division--</option>
-                            <option value="1">West Division</option>
-                            <option value="2">East Division</option>
-                            <option value="3">North Division</option>
-                            <option value="4">South Division</option>
-                        </select>
+                        <select id="Division" onchange="populateSubivision()">
+                          <option value="">Select Division</option>
+                      </select>
                     </div>
                       <div class="accordion1-content-description" style="margin-top: 19px;">
                         <label for="Sub Division">Sub Division:</label>
-                        <select id="SubDivision">
-                          <option value="0">--select sub division--</option>
-                           <option value="1">west zone</option>
-                          <option value="2">east zone</option>
-                          <option value="3">north zone</option>
-                          <option value="4">south zone</option>
-                        </select>
+                        <select id="SubDivision" onchange="populateSubcluster()">
+                          <option value="">Select Sub Division</option>
+                      </select>
                       </div>
-                      <div class="accordion1-content-description" >
+                      <div class="accordion1-content-description" style="margin-top: 19px; width:150px">
                         <label for="Sub-cluster">Sub-cluster:</label>
-                          <select id="Subcluster">
-                            <option value="0">--select Sub-cluster--</option>
-                            <option value="1">west zone</option>
-                            <option value="2">east zone</option>
-                            <option value="3">north zone</option>
-                            <option value="4">south zone</option>
-                          </select>
+                        <select id="Subcluster">
+                          <option value="">Select Subcluster</option>
+                      </select>
                       </div>
                     </div>
                   </div>
