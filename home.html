@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -20,6 +21,7 @@
     border: none;
     cursor: pointer;
   }
+
   .navbar {
     display: flex;
     justify-content: space-between;
@@ -27,12 +29,14 @@
     padding: 10px -7px;
     background-color: #f8f9fa;
   }
+
   .navbar .container-fluid {
     display: flex;
     width: 100%;
     justify-content: center;
     align-items: center;
   }
+
   .navbar .d-flex {
     display: flex;
     width: 100%;
@@ -41,15 +45,18 @@
     background-color: gray;
     color: white;
   }
+
   .navbar .photo {
     width: 46px;
     margin-right: 15px;
   }
+
   .navbar h2 {
     margin: 0;
     flex: 1;
     text-align: center;
   }
+
   .navbar #logoutBtn {
     background-color: #007bff;
     color: white;
@@ -58,9 +65,11 @@
     border-radius: 4px;
     cursor: pointer;
   }
+
   .accordion-button:not(.collapsed)::after {
     background-image: url(minus.svg)
   }
+
   .accordion-button::after {
     flex-shrink: 0;
     width: var(--bs-accordion-btn-icon-width);
@@ -72,26 +81,84 @@
     background-size: var(--bs-accordion-btn-icon-width);
     transition: var(--bs-accordion-btn-icon-transition);
   }
+
   #btnusercreation {
     background-color: gray;
     border-radius: 0.5rem;
     color: white;
   }
+
   .btn-concept button.active {
-    background-color: black !important ;
+    background-color: black !important;
   }
-  #data-table{
+
+  #data-table {
     margin-left: 37px;
   }
-  tbody, td, tfoot, th, thead, tr {
+
+  tbody,
+  td,
+  tfoot,
+  th,
+  thead,
+  tr {
     border-color: inherit;
     border-style: solid;
     border-width: 0;
     height: 53px;
     padding-inline: 8px;
     text-align: center;
-}
+  }
+
+  .popup {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+
+  .popup-content {
+    background-color: white;
+    margin: 10% auto;
+    padding: 20px;
+    border-radius: 0.5rem;
+    width: 662px;
+  }
+
+  .accordion-button {
+    background-color: gray;
+    color: white;
+    border-radius: 0.5rem;
+    font-size: 15px;
+    width: 100%;
+    border: none;
+    cursor: pointer;
+    position: relative;
+  }
+
+  .close {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    cursor: pointer;
+  }
+
+  .form-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin: 20px 0;
+  }
+
+  .btn {
+    cursor: pointer;
+  }
 </style>
+
 <body>
   <div class="home-container">
     <nav class="navbar bg-body-tertiary">
@@ -102,8 +169,10 @@
             style="max-width: 1429px; width: 68px; height: 68px; margin: 0px;" data-ilt="1725952568621">
           <h2>Clamp</h2>
           <button id="General Admin">General Admin
-            <img src="https://e7.pngegg.com/pngimages/636/819/png-clipart-computer-icons-privacy-policy-admin-icon-copyright-rim-thumbnail.png" jsaction="" 
-            class="sFlh5c FyHeAf iPVvYb" style="max-width: 275px; height: 62px; margin: 0px; width: 47px;" alt="Admin png images | PNGEgg" jsname="kn3ccd" aria-hidden="false">
+            <img
+              src="https://e7.pngegg.com/pngimages/636/819/png-clipart-computer-icons-privacy-policy-admin-icon-copyright-rim-thumbnail.png"
+              jsaction="" class="sFlh5c FyHeAf iPVvYb" style="max-width: 275px; height: 62px; margin: 0px; width: 47px;"
+              alt="Admin png images | PNGEgg" jsname="kn3ccd" aria-hidden="false">
           </button>
         </form>
       </div>
@@ -114,25 +183,29 @@
         <div class="accordion1-content" style="padding: 54px 0px;">
           <!-- top Buttons  -->
           <div class="btn-concept" style="margin-left: 32px;">
-            <button id="btnusercreation" class="creation"><img 
-              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnMKoc5DPbXkFiCsITqw3dfOM5mR-rXWzaug&amp;s"
+            <button id="btnusercreation" class="creation"><img
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnMKoc5DPbXkFiCsITqw3dfOM5mR-rXWzaug&amp;s"
                 class="sFlh5c FyHeAf" alt="Add Male User Color icon PNG and SVG Vector Free Download" jsname="JuXqh"
                 style="max-width: 778px; width: 38px; height: 26px; margin: 0px;" data-ilt="1725950635170">User
               creation</button>
-            <button id="btnareacreation"  class="creation"style="background-color: gray; border-radius: 0.5rem; color:white;"><img
+            <button id="btnareacreation" class="creation"
+              style="background-color: gray; border-radius: 0.5rem; color:white;"><img
                 src="https://cdn.pixabay.com/photo/2024/07/06/04/27/map-8875912_640.png" jsaction=""
                 class="sFlh5c FyHeAf iPVvYb" style="max-width: 778px; height: 26px; margin: 0px; width: 38px;"
                 alt="1,000+ Free Location &amp; Map Images - Pixabay" jsname="kn3ccd" aria-hidden="false">Area
               creation</button>
-            <button id="btncustomtables" class="creation" style="background-color: gray; border-radius: 0.5rem; color:white;"><img
+            <button id="btncustomtables" class="creation"
+              style="background-color: gray; border-radius: 0.5rem; color:white;"><img
                 src="https://cdn-icons-png.flaticon.com/512/7604/7604036.png" jsaction="" class="sFlh5c FyHeAf iPVvYb"
                 style="max-width: 778px; width: 19px; height: 26px; margin: 0px;" alt="Table - Free web icons"
                 jsname="kn3ccd" aria-hidden="false">Custom Tables</button>
-            <button id="btnsqlquery"  class="creation"style="background-color: gray; border-radius: 0.5rem; color:white;"><img
+            <button id="btnsqlquery" class="creation"
+              style="background-color: gray; border-radius: 0.5rem; color:white;"><img
                 src="https://cdn-icons-png.flaticon.com/512/7604/7604036.png" jsaction="" class="sFlh5c FyHeAf iPVvYb"
                 style="max-width: 778px; width: 19px; height: 26px; margin: 0px;" alt="Table - Free web icons"
                 jsname="kn3ccd" aria-hidden="false">Sql Query</button>
-            <button id="btnmobileappversions" class="creation" style="background-color: gray; border-radius: 0.5rem; color:white;"><img
+            <button id="btnmobileappversions" class="creation"
+              style="background-color: gray; border-radius: 0.5rem; color:white;"><img
                 src="https://www.cdc.gov/epiinfo/images/mobile/mobile-android.png?_=99686" jsaction=""
                 class="sFlh5c FyHeAf iPVvYb" style="max-width: 778px; height: 26px; margin: 0px; width: 38px;"
                 alt="Mobile | Epi Info™ | CDC" jsname="kn3ccd" aria-hidden="false">Mobile App Versions</button>
@@ -145,8 +218,7 @@
                   User creation
                 </button>
               </h2>
-              <div id="collapseOne" class="collapse" aria-labelledby="headingOne"
-                data-bs-parent="#accordionExample">
+              <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
                 <div class="accordion-body" style="height: 308px; border:2px solid gray;border-radius:0.5rem;">
                   <div class="container text-center">
                     <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3" style="margin-bottom: -14px; margin-top:31px;">
@@ -161,7 +233,7 @@
                       <div class="accordion1-content-description">
                         <label for="Role Name">Role Name:</label>
                         <select id="roleName">
-                          <option>--select your Role</option>
+                          <option value="0">--select your Role</option>
                           <option value="Assistant Engineer">Assistant Engineer</option>
                           <option value="Sr.Engineer">Sr.Engineer</option>
                           <option value="Radiology Engineer">Radiology Engineer</option>
@@ -170,7 +242,7 @@
                       <div class="accordion1-content-description">
                         <label for="Company code">Company code:</label>
                         <select id="companyCode">
-                          <option>--select code--</option>
+                          <option value="0">--select code--</option>
                           <option value="R13">R13</option>
                           <option value="R16">R16</option>
                           <option value="R19">R19</option>
@@ -180,7 +252,7 @@
                       <div class="accordion1-content-description">
                         <label for="Division">Division:</label>
                         <select id="division">
-                          <option>--select Division--</option>
+                          <option value="0">--select Division--</option>
                           <option value="West Division">West Division</option>
                           <option value="East Division">East Division</option>
                           <option value="North Division">North Division</option>
@@ -190,7 +262,7 @@
                       <div class="accordion1-content-description">
                         <label for="Sub Division">Sub Division:</label>
                         <select id="subDivision">
-                          <option>--select sub division--</option>
+                          <option value="0">--select sub division--</option>
                           <option value="west zone">west zone</option>
                           <option value="east zone">east zone</option>
                           <option value="north zone">north zone</option>
@@ -215,45 +287,49 @@
                       </div>
                       <div class="accordion1-content-description" style="margin-left:945px;margin-top:60px;">
                         <button type="Clear" class="btn btn-secondary" id="btnClear"
-                        style="width: 95px; background-color:red;">Clear</button>
+                          style="width: 95px; background-color:red;">Clear</button>
                         <button type="Submit" class="btn btn-primary me-2" id="btnSubmit"
-                        style="width: 95px; background-color:green;">Submit</button>
+                          style="width: 95px; background-color:green;">Submit</button>
                       </div>
                       <div class="accordion" id="accordionExample5" style="margin-right: 81px;">
                         <!-- <div class="accordion-item" style="margin-left: 32px;"> -->
-                          <h2 class="accordion-header" id="headingOne5">
-                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne5"
-                              aria-expanded="true" aria-controls="collapseOne" style="background-color: gray; color:white;width:1241px;margin-left:-61px;margin-top:49px; border-radius:0.5rem;"><img src="https://cdn.pixabay.com/photo/2016/04/15/18/05/computer-1331579_640.png" jsaction="" class="sFlh5c FyHeAf iPVvYb"
-                               style="max-width: 640px; height: 26px; margin: 0px; width: 40px;" alt="20,000+ Free User Icon &amp; 
+                        <h2 class="accordion-header" id="headingOne5">
+                          <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseOne5" aria-expanded="true" aria-controls="collapseOne"
+                            style="background-color: gray; color:white;width:1241px;margin-left:-61px;margin-top:49px; border-radius:0.5rem;"><img
+                              src="https://cdn.pixabay.com/photo/2016/04/15/18/05/computer-1331579_640.png" jsaction=""
+                              class="sFlh5c FyHeAf iPVvYb"
+                              style="max-width: 640px; height: 26px; margin: 0px; width: 40px;" alt="20,000+ Free User Icon &amp; 
                                 User Images - Pixabay" jsname="kn3ccd" aria-hidden="false">
-                              Users
+                            Users
                           </button>
-                          </h2>
-                          <div id="collapseOne5" class="collapse" aria-labelledby="headingOne5"
-                            data-bs-parent="#accordionExample5">
-                            <div class="accordion-body" style="height: 308px; width:1244px; border:2px solid gray;border-radius:0.5rem; margin-left:-63px">
-                              <table id="data-table">
-                                <thead>
-                                    <tr>
-                                        <th>User ID</th>
-                                        <th>User Name</th>
-                                        <th>Role Name</th>
-                                        <th>Company Code</th>
-                                        <th>Division</th>
-                                        <th>Sub Division</th>
-                                        <th>Email</th>
-                                        <th>Phone Number</th>
-                                        <th>Address</th>
-                                        <th>Actions</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                </tbody>
+                        </h2>
+                        <div id="collapseOne5" class="collapse" aria-labelledby="headingOne5"
+                          data-bs-parent="#accordionExample5">
+                          <div class="accordion-body"
+                            style="height: 308px; width:1244px; border:2px solid gray;border-radius:0.5rem; margin-left:-63px">
+                            <table id="data-table">
+                              <thead>
+                                <tr>
+                                  <th>User ID</th>
+                                  <th>User Name</th>
+                                  <th>Role Name</th>
+                                  <th>Company Code</th>
+                                  <th>Division</th>
+                                  <th>Sub Division</th>
+                                  <th>Email</th>
+                                  <th>Phone Number</th>
+                                  <th>Address</th>
+                                  <th>Actions</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                              </tbody>
                             </table>
-                                </div>
-                              </div>
-                            <!-- </div> -->
                           </div>
+                        </div>
+                        <!-- </div> -->
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -263,8 +339,9 @@
           <div class="accordion" id="accordionExample1" style="margin-right: 81px;">
             <div class="accordion-item" style="margin-left: 32px;">
               <h2 class="accordion-header" id="headingOne1">
-                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOnearea"
-                  aria-expanded="true" aria-controls="collapseOne" style="background-color: gray; color:white;">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#collapseOnearea" aria-expanded="true" aria-controls="collapseOne"
+                  style="background-color: gray; color:white;">
                   Area creation
                 </button>
               </h2>
@@ -277,19 +354,21 @@
                         <label for="Division">Division:</label>
                         <select id="Division" onchange="populateSubivision()">
                           <option value="">Select Division</option>
-                      </select>
-                    </div>
+                        </select>
+                        <button id="openPopup">+</button>
+
+                      </div>
                       <div class="accordion1-content-description" style="margin-top: 19px;">
                         <label for="Sub Division">Sub Division:</label>
                         <select id="SubDivision" onchange="populateSubcluster()">
                           <option value="">Select Sub Division</option>
-                      </select>
+                        </select>
                       </div>
                       <div class="accordion1-content-description" style="margin-top: 19px; width:150px">
                         <label for="Sub-cluster">Sub-cluster:</label>
                         <select id="Subcluster">
                           <option value="">Select Subcluster</option>
-                      </select>
+                        </select>
                       </div>
                     </div>
                   </div>
@@ -300,8 +379,9 @@
           <div class="accordion" id="accordionExample2" style="margin-right: 81px;">
             <div class="accordion-item" style="margin-left: 32px;">
               <h2 class="accordion-header" id="headingOne2">
-                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOnecustomtables"
-                  aria-expanded="true" aria-controls="collapseOne" style="background-color: gray; color:white;">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#collapseOnecustomtables" aria-expanded="true" aria-controls="collapseOne"
+                  style="background-color: gray; color:white;">
                   customtables
                 </button>
               </h2>
@@ -388,8 +468,9 @@
           <div class="accordion" id="accordionExample3" style="margin-right: 81px;">
             <div class="accordion-item" style="margin-left: 32px;">
               <h2 class="accordion-header" id="headingOne3">
-                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOnesqlquery"
-                  aria-expanded="true" aria-controls="collapseOne" style="background-color: gray; color:white;">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#collapseOnesqlquery" aria-expanded="true" aria-controls="collapseOne"
+                  style="background-color: gray; color:white;">
                   sqlquery
                 </button>
               </h2>
@@ -476,13 +557,14 @@
           <div class="accordion" id="accordionExample4" style="margin-right: 81px;">
             <div class="accordion-item" style="margin-left: 32px;">
               <h2 class="accordion-header" id="headingOne4">
-                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOnemobileappversions"
-                  aria-expanded="true" aria-controls="collapseOne" style="background-color: gray; color:white;">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#collapseOnemobileappversions" aria-expanded="true" aria-controls="collapseOne"
+                  style="background-color: gray; color:white;">
                   mobileappversions
                 </button>
               </h2>
-              <div id="collapseOnemobileappversions" class="collapse"
-                aria-labelledby="headingOne4" data-bs-parent="#accordionExample4">
+              <div id="collapseOnemobileappversions" class="collapse" aria-labelledby="headingOne4"
+                data-bs-parent="#accordionExample4">
                 <div class="accordion-body" style="height: 308px; border:2px solid gray;border-radius:0.5rem;">
                   <div class="container text-center">
                     <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3" style="margin-bottom: -14px; margin-top:31px;">
@@ -564,9 +646,62 @@
         </div>
       </div>
     </div>
+    <div class="popup" id="popup">
+      <div class="popup-content">
+        <button class="accordion-button" type="button">
+          Division Creation
+          <span class="close" id="closeButton">&times;</span>
+        </button>
+        <div class="accordion-body">
+          <div class="container text-center">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="DivisionCode">Division Code:</label>
+                <input type="text" id="DivisionCode" placeholder="Division Code" style="width: 100%;">
+              </div>
+              <div class="form-group">
+                <label for="DivisionName">Division Name:</label>
+                <input type="text" id="DivisionName" placeholder="Division Name" style="width: 100%;">
+              </div>
+              <div class="form-group">
+                <label for="DivisionNameCode">Division Name Code:</label>
+                <input type="text" id="DivisionNameCode" placeholder="Division Name Code" style="width: 100%;">
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="SAPDivisionCode">SAP Division Code:</label>
+                <input type="text" id="SAPDivisionCode" placeholder="SAP Division Code" style="width: 100%;">
+              </div>
+              <div class="form-group">
+                <label for="Circle">Circle:</label>
+                <input type="text" id="Circle" placeholder="Circle" style="width: 100%;">
+              </div>
+              <div class="form-group">
+                <label for="ISUCircle">ISU Circle:</label>
+                <input type="text" id="ISUCircle" placeholder="ISU Circle" style="width: 100%;">
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="Company">Company:</label>
+                <input type="text" id="Company" placeholder="Company" style="width: 100%;">
+              </div>
+            </div>
+            <div class="form-row" style="margin-top: 20px;">
+              <button type="button" class="btn"
+                style="background-color: red; color: white; margin-right: 10px; width: 81px;">Clear</button>
+              <button type="button" class="btn"
+                style="background-color: green; color: white; width: 67px;">Submit</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
       crossorigin="anonymous"></script>
+
 </body>
 
 </html>
