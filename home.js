@@ -273,19 +273,159 @@ $(document).ready(function () {
         var index = $(this).closest('tr').data('index');
         editUser(index);
     });
-    document.getElementById('openPopup').onclick = function () {
-        document.getElementById('popup').style.display = 'block';
-    };
+    $('#openPopup').on('click', function() {
+        $('#popup').show();
+    });
 
-    document.getElementById('closeButton').onclick = function () {
-        document.getElementById('popup').style.display = 'none';
-    };
+    $('#closeButton').on('click', function() {
+        $('#popup').hide();
+    });
 
-    window.onclick = function (event) {
-        if (event.target === document.getElementById('popup')) {
-            document.getElementById('popup').style.display = 'none';
+    $(window).on('click', function(event) {
+        if ($(event.target).is($('#popup'))) {
+            $('#popup').hide();
         }
-    };
+    });
+    $('#openPopup1').on('click', function() {
+        $('#popup1').show();
+    });
+
+    $('#closeButton1').on('click', function() {
+        $('#popup1').hide();
+    });
+
+    $(window).on('click', function(event) {
+        if ($(event.target).is($('#popup1'))) {
+            $('#popup1').hide();
+        }
+    });
+    $('#openPopup2').on('click', function() {
+        $('#popup2').show();
+    });
+
+    $('#closeButton2').on('click', function() {
+        $('#popup2').hide();
+    });
+
+    $(window).on('click', function(event) {
+        if ($(event.target).is($('#popup2'))) {
+            $('#popup2').hide();
+        }
+    });
+    $('#SubmitButton').on('click', function() {
+        var divisionCode = $('#DivisionCode').val();
+        var divisionName = $('#DivisionName').val();
+        var divisionNameCode = $('#DivisionNameCode').val();
+        var sapDivisionCode = $('#SAPDivisionCode').val();
+        var circle = $('#Circle').val();
+        var isuCircle = $('#ISUCircle').val();
+        var company = $('#Company').val();
+  
+        console.log({
+          divisionCode,
+          divisionName,
+          divisionNameCode,
+          sapDivisionCode,
+          circle,
+          isuCircle,
+          company
+        });
+      });
+      $('#ClearButton').on('click', function() {
+        var divisionCode = $('#DivisionCode').val('');
+        var divisionName = $('#DivisionName').val('');
+        var divisionNameCode = $('#DivisionNameCode').val('');
+        var sapDivisionCode = $('#SAPDivisionCode').val('');
+        var circle = $('#Circle').val('');
+        var isuCircle = $('#ISUCircle').val('');
+        var company = $('#Company').val('');
+
+        console.log({
+            divisionCode,
+            divisionName,
+            divisionNameCode,
+            sapDivisionCode,
+            circle,
+            isuCircle,
+            company
+        });
+    });
+    $('#ButtonSubmit').on('click', function() {
+        var divisionName = $('#Division\\ Name').val();
+        var subDivisionCode = $('#Sub-Division\\ Code').val();
+        var subDivisionName = $('#Sub-Division\\ Name').val();
+        var subDivisionArea = $('#Sub-Division\\ Area').val();
+        var sapSubDivisionCode = $('#SAP\\ Sub-Division\\ Code').val();
+        var subDivisionStatus = $('#Sub-Division\\ Status').val();
+        var subDivisionIncharge = $('#Sub-Division\\ Incharge').val();
+        var phoneNumber = $('#Phone\\ Number').val();
+  
+        console.log({
+          divisionName,
+          subDivisionCode,
+          subDivisionName,
+          subDivisionArea,
+          sapSubDivisionCode,
+          subDivisionStatus,
+          subDivisionIncharge,
+          phoneNumber
+        });
+      });
+      $('#CancelButton').on('click', function() {
+        var divisionName = $('#Division\\ Name').val('0');
+        var subDivisionCode = $('#Sub-Division\\ Code').val('');
+        var subDivisionName = $('#Sub-Division\\ Name').val('');
+        var subDivisionArea = $('#Sub-Division\\ Area').val('');
+        var sapSubDivisionCode = $('#SAP\\ Sub-Division\\ Code').val('');
+        var subDivisionStatus = $('#Sub-Division\\ Status').val('');
+        var subDivisionIncharge = $('#Sub-Division\\ Incharge').val('');
+        var phoneNumber = $('#Phone\\ Number').val('');
+  
+        console.log({
+          divisionName,
+          subDivisionCode,
+          subDivisionName,
+          subDivisionArea,
+          sapSubDivisionCode,
+          subDivisionStatus,
+          subDivisionIncharge,
+          phoneNumber
+        });
+      });
+      $('#Submitbtn').on('click', function() {
+        var divisionName = $('#Division\\ Name').val();
+        var subDivisionName = $('#Sub-Division\\ Name').val();
+        var subClusterCode = $('#Sub-Cluster\\ Code').val();
+        var subClusterName = $('#Sub-Cluster\\ Name').val();
+        var subClusterStatus = $('#Sub-Cluster\\ Status').val();
+        var remarks = $('#Remarks').val();
+  
+        console.log({
+          divisionName,
+          subDivisionName,
+          subClusterCode,
+          subClusterName,
+          subClusterStatus,
+          remarks
+        });
+      });
+      $('#Cancelbtn').on('click', function() {
+        var divisionName = $('#Division\\ Name').val('0');
+        var subDivisionName = $('#Sub-Division\\ Name').val('0');
+        var subClusterCode = $('#Sub-Cluster\\ Code').val('');
+        var subClusterName = $('#Sub-Cluster\\ Name').val('');
+        var subClusterStatus = $('#Sub-Cluster\\ Status').val('');
+        var remarks = $('#Remarks').val('');
+  
+        console.log({
+          divisionName,
+          subDivisionName,
+          subClusterCode,
+          subClusterName,
+          subClusterStatus,
+          remarks
+        });
+      });
 });
 
 function setActiveButton(buttonId) {

@@ -350,25 +350,26 @@
                 <div class="accordion-body" style="height: 214px; border:2px solid gray;border-radius:0.5rem;">
                   <div class="container text-center">
                     <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3" style="margin-bottom: -14px; margin-top:31px;">
-                      <div class="accordion1-content-description" style="width: 150px;">
+                      <div class="accordion1-content-description" style="margin-top: 19px;">
                         <label for="Division">Division:</label>
-                        <select id="Division" onchange="populateSubivision()">
+                        <select id="Division" onchange="populateSubivision()" style="margin-left: 20px;">
                           <option value="">Select Division</option>
                         </select>
-                        <button id="openPopup">+</button>
-
+                        <button id="openPopup" style="background-color: gray;">+</button>
                       </div>
                       <div class="accordion1-content-description" style="margin-top: 19px;">
                         <label for="Sub Division">Sub Division:</label>
                         <select id="SubDivision" onchange="populateSubcluster()">
                           <option value="">Select Sub Division</option>
                         </select>
+                        <button id="openPopup1" style="background-color: gray;">+</button>
                       </div>
-                      <div class="accordion1-content-description" style="margin-top: 19px; width:150px">
+                      <div class="accordion1-content-description" style="margin-top: 19px;">
                         <label for="Sub-cluster">Sub-cluster:</label>
                         <select id="Subcluster">
-                          <option value="">Select Subcluster</option>
+                          <option value="">Select Sub Cluster</option>
                         </select>
+                        <button id="openPopup2" style="background-color: gray;">+</button>
                       </div>
                     </div>
                   </div>
@@ -648,12 +649,12 @@
     </div>
     <div class="popup" id="popup">
       <div class="popup-content">
-        <button class="accordion-button" type="button">
+        <button class="accordion-button" type="button" style="background-color: gray;height: 50px;color: white;">
           Division Creation
           <span class="close" id="closeButton">&times;</span>
         </button>
         <div class="accordion-body">
-          <div class="container text-center">
+          <div class="container text-center" style="border: 2px solid gray;border-radius:0.5rem;">
             <div class="form-row">
               <div class="form-group">
                 <label for="DivisionCode">Division Code:</label>
@@ -688,20 +689,144 @@
                 <input type="text" id="Company" placeholder="Company" style="width: 100%;">
               </div>
             </div>
-            <div class="form-row" style="margin-top: 20px;">
-              <button type="button" class="btn"
-                style="background-color: red; color: white; margin-right: 10px; width: 81px;">Clear</button>
-              <button type="button" class="btn"
-                style="background-color: green; color: white; width: 67px;">Submit</button>
+            <div class="form-row" style="margin-top: 20px;margin-left:296px;">
+              <button type="button" class="btn" id="ClearButton"
+                style="background-color: red; color: white; margin-right: 17px; width: 81px;">Clear</button>
+              <button type="button" class="btn" id="SubmitButton"
+                style="background-color: green; color: white; width: 97px;">Submit</button>
             </div>
           </div>
         </div>
       </div>
     </div>
+    <div class="popup" id="popup1">
+      <div class="popup-content">
+        <button class="accordion-button" type="button" style="background-color: gray;height: 50px;color: white;">
+          Sub-Division Creation
+          <span class="close" id="closeButton1">&times;</span>
+        </button>
+        <div class="accordion-body">
+          <div class="container text-center" style="border: 2px solid gray;border-radius:0.5rem;">
+            <div class="form-row">
+              <div class="form-group col">
+                <label for="Division Name">Division Name:</label>
+                <select id="Division Name" style="width:200px; height:30px;">
+                  <option value="0">--select Division--</option>
+                  <option value="West Division">West Division</option>
+                  <option value="East Division">East Division</option>
+                  <option value="North Division">North Division</option>
+                  <option value="South Division">South Division</option>
+                </select>
+              </div>
+              <div class="form-group col">
+                <label for="Sub-Division Code">Sub-Division Code:</label>
+                <input type="text" id="Sub-Division Code" placeholder="Sub-Division Code" style="width: 100%;">
+              </div>
+              <div class="form-group col">
+                <label for="Sub-Division Name">Sub-Division Name:</label>
+                <input type="text" id="Sub-Division Name" placeholder="Sub-Division Name" style="width: 100%;">
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group col">
+                <label for="Sub-Division Area">Sub-Division Area:</label>
+                <input type="text" id="Sub-Division Area" placeholder="Sub-Division Area" style="width: 100%;">
+              </div>
+              <div class="form-group col">
+                <label for="SAP Sub-Division Code">SAP Sub-Division Code:</label>
+                <input type="text" id="SAP Sub-Division Code" placeholder="SAP Sub-Division Code" style="width: 100%;">
+              </div>
+              <div class="form-group col">
+                <label for="Sub-Division Status">Sub-Division Status:</label>
+                <select id="Sub-Division Status" style="width:100%;height:30px;">
+                  <option value="Active">Active</option>
+                  <option value="Close">Close</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group col">
+                <label for="Sub-Division Incharge">Sub-Division Incharge:</label>
+                <input type="text" id="Sub-Division Incharge" placeholder="Sub-Division Incharge" style="width: 100%;">
+              </div>
+              <div class="form-group col">
+                <label for="Phone Number">Phone Number:</label>
+                <input type="text" id="Phone Number" placeholder="Phone Number" style="width: 100%;">
+              </div>
+            </div>
+            <div class="form-row" style="margin-top: 20px;">
+              <div class="col text-center" style="margin-right:-458px;">
+                <button type="button" class="btn" id="CancelButton" style="background-color: red; color: white; margin-right: 17px;">Cancel</button>
+                <button type="button" class="btn" id="ButtonSubmit" style="background-color: green; color: white;">Submit</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="popup" id="popup2">
+      <div class="popup-content">
+        <button class="accordion-button" type="button" style="background-color: gray;height: 50px;color: white;">
+          Sub-Cluster Creation
+          <span class="close" id="closeButton2">&times;</span>
+        </button>
+        <div class="accordion-body">
+          <div class="container text-center" style="border: 2px solid gray;border-radius:0.5rem;">
+            <div class="form-row">
+              <div class="form-group col">
+                <label for="Division Name">Division Name:</label>
+                <select id="Division Name" style="width:100%; height:30px;">
+                  <option value="0">--select Division--</option>
+                  <option value="West Division">West Division</option>
+                  <option value="East Division">East Division</option>
+                  <option value="North Division">North Division</option>
+                  <option value="South Division">South Division</option>
+                </select>
+              </div>
+              <div class="form-group col">
+                <label for="Sub-Division Name">Sub-Division Name:</label>
+                <select id="Sub-Division Name" style="width: 100%; height:30px;">
+                  <option value="0">--Select Sub-Division--</option>
+                  <option value="West Zone">West Zone</option>
+                  <option value="East Zone">East Zone</option>
+                  <option value="North Zone">North Zone</option>
+                  <option value="South Zone">South Zone</option>
+                </select>
+              </div>
+              <div class="form-group col">
+                <label for="Sub-Cluster Code">Sub-Cluster Code:</label>
+                <input type="text" id="Sub-Cluster Code" placeholder="Sub-Cluster Code" style="width: 100%;">
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group col">
+                <label for="Sub-Cluster Name">Sub-Cluster Name:</label>
+                <input type="text" id="Sub-Cluster Name" placeholder="Sub-Cluster Name" style="width: 100%;">
+              </div>
+              <div class="form-group col">
+                <label for="Sub-Cluster Status">Sub-Cluster:</label>
+                <input type="text" id="Sub-Cluster Status" placeholder="Sub-Cluster Status" style="width: 100%;">
+              </div>
+              <div class="form-group col">
+                <label for="Remarks">Remarks:</label>
+                <input type="text" id="Remarks" placeholder="Remarks" style="width: 100%;">
+              </div>
+            </div>
+            <div class="form-row" style="margin-top: 20px;">
+              <div class="col text-center" style="margin-right:-458px;">
+                <button type="button" class="btn" id="Cancelbtn" style="background-color: red; color: white; margin-right: 17px;">Cancel</button>
+                <button type="button" class="btn" id=""  style="background-color: green; color: white;">Submit</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+      </div>
+    </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
       crossorigin="anonymous"></script>
-
 </body>
-
 </html>
