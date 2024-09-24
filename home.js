@@ -426,6 +426,7 @@ $(document).ready(function () {
           remarks
         });
       });
+      
 });
 
 function setActiveButton(buttonId) {
@@ -434,5 +435,29 @@ function setActiveButton(buttonId) {
     // Add 'active' class to the clicked button
     $(buttonId).addClass('active');
 }
+function toggleDivisionCreation() {
+    var divisionSelect = document.getElementById("Division");
+    var divisionCreationAccordion = document.getElementById("accordionExample8");
+    
+    if (divisionSelect.value) {
+        divisionCreationAccordion.style.display = "block";
+    } else {
+        divisionCreationAccordion.style.display = "none";
+    }
+}
+function toggleSubDivisionCreation() {
+    var subdivisionSelect = document.getElementById("SubDivisionSelect");
+    var subdivisionCreationAccordion = document.getElementById("accordionExample9");
+    
+    if (subdivisionSelect.value !== "0") {
+        subdivisionCreationAccordion.style.display = "block"; 
+    } else {
+        subdivisionCreationAccordion.style.display = "none"; 
+    }
+}
+
+function populateSubcluster() {
+}
+
 
 
