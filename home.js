@@ -458,6 +458,15 @@ function toggleSubDivisionCreation() {
 
 function populateSubcluster() {
 }
-
+function toggleSubclusterCreation() {
+    var Subcluster = document.getElementById("Subcluster");
+    var subclusterCreationAccordion = document.getElementById("accordionExample10");
+    
+    if (Subcluster.value !== "0") {
+        subclusterCreationAccordion.style.display = "block"; 
+    } else {
+        subclusterCreationAccordion.style.display = "none"; 
+    }
+}
 
 
