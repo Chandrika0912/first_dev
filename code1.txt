@@ -1,0 +1,848 @@
+$(document).ready(function () {
+
+    const accordionsListFirst = document.getElementById("accordionExample8")
+    const accordionsListSecond = document.getElementById("accordionExample9")
+    const accordionsListThird = document.getElementById("accordionExample10")
+    console.log(accordionsListFirst)
+    $("#Division").change(function () {
+        accordionsListFirst.style.display = "block"
+        accordionsListSecond.style.display = "none"
+        accordionsListThird.style.display = "none"
+        // Get the selected value
+        const selectedValue = $("#Division").val();
+
+        // Determine the name to display based on the selected value
+        let displayName = "";
+        if (selectedValue == "1") {
+            displayName = "Area updation ";
+        } else if (selectedValue == "2") {
+            displayName = "Area updation ";
+        } else if (selectedValue == "3") {
+            displayName = "Area updation ";
+        } else if (selectedValue == "4") {
+            displayName = "Area updation ";
+        } else {
+            displayName = ""; // Clear if no valid selection
+        }
+
+        // Update the text in the span
+        $("#area").text(displayName);
+    });
+    $('#SubmitButton1').on('click', function () {
+        var divisionCode1 = $('#DivisionCode1').val();
+        var divisionName1 = $('#DivisionName1').val();
+        var divisionNameCode1 = $('#DivisionNameCode1').val();
+        var sapDivisionCode1 = $('#SAPDivisionCode1').val();
+        var circle1 = $('#Circle1').val();
+        var isuCircle1 = $('#ISUCircle1').val();
+        var company1 = $('#Company1').val();
+
+        console.log({
+            divisionCode1,
+            divisionName1,
+            divisionNameCode1,
+            sapDivisionCode1,
+            circle1,
+            isuCircle1,
+            company1
+        });
+    });
+    $('#ClearButton1').on('click', function () {
+        var divisionCode1 = $('#DivisionCode1').val('');
+        var divisionName1 = $('#DivisionName1').val('');
+        var divisionNameCode1 = $('#DivisionNameCode1').val('');
+        var sapDivisionCode1 = $('#SAPDivisionCode1').val('');
+        var circle1 = $('#Circle1').val('');
+        var isuCircle1 = $('#ISUCircle1').val('');
+        var company1 = $('#Company1').val('');
+
+        console.log({
+            divisionCode1,
+            divisionName1,
+            divisionNameCode1,
+            sapDivisionCode1,
+            circle1,
+            isuCircle1,
+            company1
+        });
+    });
+        $('#Division').change(function () {
+            // Get the selected value
+            var selectedValue = $(this).val();
+    
+            // Define a mapping for the different divisions
+            var divisionData = {
+                "1": {
+                    code: '001',
+                    name: 'West Division',
+                    nameCode: 'WD-001',
+                    sapCode: '012',
+                    circle: 'west circle',
+                    isuCircle: 'west circle1',
+                    company: 'west company'
+                },
+                "2": {
+                    code: '002',
+                    name: 'East Division',
+                    nameCode: 'ED-001',
+                    sapCode: '012',
+                    circle: 'East circle',
+                    isuCircle: 'East circle1',
+                    company: 'East company'
+                },
+                "3": {
+                    code: '003',
+                    name: 'North Division',
+                    nameCode: 'ND-001',
+                    sapCode: '012',
+                    circle: 'North circle',
+                    isuCircle: 'North circle1',
+                    company: 'North company'
+                },
+                "4": {
+                    code: '004',
+                    name: 'South Division',
+                    nameCode: 'SD-001',
+                    sapCode: '012',
+                    circle: 'South circle',
+                    isuCircle: 'south circle1',
+                    company: 'south company'
+                }
+            };
+    
+            // Clear all fields first
+            $('#DivisionCode1, #DivisionName1, #DivisionNameCode1, #SAPDivisionCode1, #Circle1, #ISUCircle1, #Company1').val('');
+    
+            // If a valid division is selected, populate the fields
+            if (divisionData[selectedValue]) {
+                $('#DivisionCode1').val(divisionData[selectedValue].code);
+                $('#DivisionName1').val(divisionData[selectedValue].name);
+                $('#DivisionNameCode1').val(divisionData[selectedValue].nameCode);
+                $('#SAPDivisionCode1').val(divisionData[selectedValue].sapCode);
+                $('#Circle1').val(divisionData[selectedValue].circle);
+                $('#ISUCircle1').val(divisionData[selectedValue].isuCircle);
+                $('#Company1').val(divisionData[selectedValue].company);
+            }
+        });   
+    $("#SubDivisionSelect").change(function () {
+        // Get the selected value
+        const selectedValue = $("#SubDivisionSelect").val();
+
+        accordionsListFirst.style.display = "none"
+        accordionsListSecond.style.display = "block"
+        accordionsListThird.style.display = "none"
+
+        // Determine the name to display based on the selected value
+        let displayName1 = "";
+        if (selectedValue == "5") {
+            displayName1 = "Subdivision Creation ";
+        } else if (selectedValue == "6") {
+            displayName1 = " Subdivision Creation";
+        } else if (selectedValue == "7") {
+            displayName1 = "Subdivision Creation ";
+        } else if (selectedValue == "8") {
+            displayName1 = "Subdivision Creation ";
+        } else {
+            displayName1 = ""; // Clear if no valid selection
+        }
+
+        // Update the text in the span
+        $("#area").text(displayName1);
+    });
+    $('#ButtonSubmit1').on('click', function () {
+        var divisionName1 = $('#DivisionName1').val();
+        var subDivisionCode1 = $('#SubDivisionCode1').val();
+        var subDivisionName1 = $('#SubDivisionName1').val();
+        var subDivisionArea1 = $('#SubDivisionArea1').val();
+        var sapSubDivisionCode1 = $('#SAPSubDivisionCode1').val();
+        var subDivisionStatus1 = $('#SubDivisionStatus1').val();
+        var subDivisionIncharge1 = $('#SubDivisionIncharge1').val();
+        var phoneNumber1 = $('#PhoneNumber1').val();
+
+        console.log({
+            divisionName1,
+            subDivisionCode1,
+            subDivisionName1,
+            subDivisionArea1,
+            sapSubDivisionCode1,
+            subDivisionStatus1,
+            subDivisionIncharge1,
+            phoneNumber1
+        });
+    });
+    $('#CancelButton1').on('click', function () {
+        var divisionName1 = $('#DivisionName1').val('0');
+        var subDivisionCode1 = $('#SubDivisionCode1').val('');
+        var subDivisionName1 = $('#SubDivisionName1').val('');
+        var subDivisionArea1 = $('#SubDivisionArea1').val('');
+        var sapSubDivisionCode1 = $('#SAPSubDivisionCode1').val('');
+        var subDivisionStatus1 = $('#SubDivisionStatus1').val('0');
+        var subDivisionIncharge1 = $('#SubDivisionIncharge1').val('');
+        var phoneNumber1 = $('#PhoneNumber1').val('');
+
+        console.log({
+            divisionName1,
+            subDivisionCode1,
+            subDivisionName1,
+            subDivisionArea1,
+            sapSubDivisionCode1,
+            subDivisionStatus1,
+            subDivisionIncharge1,
+            phoneNumber1
+        });
+    });
+    $('#SubDivisionSelect').change(function () {
+        var selectedValue = $(this).val();
+
+        // Define a mapping for the different subdivisions
+        var subDivisionData = {
+            "5": {
+                divisionName: 'West Division',
+                subDivisionCode: '005',
+                subDivisionName: 'West zone',
+                subDivisionArea: 'west area',
+                sapCode: 'dfsfvb',
+                status: 'Active',
+                inCharge: 'cvxvz',
+                phone: '9876543210'
+            },
+            "6": {
+                divisionName: 'East Division',
+                subDivisionCode: '006',
+                subDivisionName: 'East zone',
+                subDivisionArea: 'east area',
+                sapCode: 'abcdef',
+                status: 'Active',
+                inCharge: 'xyzvhnv',
+                phone: '1234567890'
+            },
+            "7": {
+                divisionName: 'North Division',
+                subDivisionCode: '007',
+                subDivisionName: 'North zone',
+                subDivisionArea: 'north area',
+                sapCode: 'ghijkl',
+                status: 'Active',
+                inCharge: 'abccg',
+                phone: '2345678901'
+            },
+            "8": {
+                divisionName: 'South Division',
+                subDivisionCode: '008',
+                subDivisionName: 'South zone',
+                subDivisionArea: 'south area',
+                sapCode: 'mnopqr',
+                status: 'Active',
+                inCharge: 'defvnnnm',
+                phone: '3456789012'
+            }
+        };
+        // Clear all fields first
+        $('#DivisionName1, #SubDivisionCode1, #SubDivisionName1, #SubDivisionArea1, #SAPSubDivisionCode1, #SubDivisionStatus1, #SubDivisionIncharge1, #PhoneNumber1').val('');
+        // If a valid subdivision is selected, populate the fields
+        if (subDivisionData[selectedValue]) {
+            $('#DivisionName1').val(subDivisionData[selectedValue].divisionName);
+            $('#SubDivisionCode1').val(subDivisionData[selectedValue].subDivisionCode);
+            $('#SubDivisionName1').val(subDivisionData[selectedValue].subDivisionName);
+            $('#SubDivisionArea1').val(subDivisionData[selectedValue].subDivisionArea);
+            $('#SAPSubDivisionCode1').val(subDivisionData[selectedValue].sapCode);
+            $('#SubDivisionStatus1').val(subDivisionData[selectedValue].status);
+            $('#SubDivisionIncharge1').val(subDivisionData[selectedValue].inCharge);
+            $('#PhoneNumber1').val(subDivisionData[selectedValue].phone);
+        }
+    });
+    $("#Subcluster").change(function () {
+        // Get the selected value
+        const selectedValue = $(this).val();
+        accordionsListFirst.style.display = "none";
+        accordionsListSecond.style.display = "none";
+        accordionsListThird.style.display = "block";
+
+        // Determine the name to display based on the selected value
+        let displayName2 = "";
+        if (["9", "10", "11", "12"].includes(selectedValue)) {
+            displayName2 = "Subcluster Creation";
+        } else {
+            displayName2 = ""; // Clear if no valid selection
+        }
+        // Update the text in the span
+        $("#area").text(displayName2);
+        // Define a mapping for the different subdivisions
+        const subClusterData = {
+            "9": {
+                divisionName: 'West Division',
+                subDivisionName: 'West Zone',
+                subClusterCode: 'vfbvcxb',
+                subClusterName: 'vxcvcxv',
+                subClusterStatus: 'fsdfcvc',
+                remarks: 'vcxvxc'
+            },
+            "10": {
+                divisionName: 'East Division',
+                subDivisionName: 'East Zone',
+                subClusterCode: 'vfbvcxb',
+                subClusterName: 'vxcvcxv',
+                subClusterStatus: 'fsdfcvc',
+                remarks: 'vcxvxc'
+            },
+            "11": {
+                divisionName: 'North Division',
+                subDivisionName: 'North Zone',
+                subClusterCode: 'vfbvcxb',
+                subClusterName: 'vxcvcxv',
+                subClusterStatus: 'fsdfcvc',
+                remarks: 'vcxvxc'
+            },
+            "12": {
+                divisionName: 'South Division',
+                subDivisionName: 'South Zone',
+                subClusterCode: 'vfbvcxb',
+                subClusterName: 'vxcvcxv',
+                subClusterStatus: 'fsdfcvc',
+                remarks: 'vcxvxc'
+            }
+        };
+        // Clear all fields first
+        $('#DivisionName3, #SubDivisionName3, #SubClusterCode3, #SubClusterName3, #SubClusterStatus3, #Remarks3').val('');
+
+        // If a valid subcluster is selected, populate the fields
+        if (subClusterData[selectedValue]) {
+            $('#DivisionName3').val(subClusterData[selectedValue].divisionName);
+            $('#SubDivisionName3').val(subClusterData[selectedValue].subDivisionName);
+            $('#SubClusterCode3').val(subClusterData[selectedValue].subClusterCode);
+            $('#SubClusterName3').val(subClusterData[selectedValue].subClusterName);
+            $('#SubClusterStatus3').val(subClusterData[selectedValue].subClusterStatus);
+            $('#Remarks3').val(subClusterData[selectedValue].remarks);
+        }
+    });
+    $('#Submitbtn3').on('click', function () {
+        var divisionName3 = $('#DivisionName3').val();
+        var subDivisionName3 = $('#SubDivisionName3').val();
+        var subClusterCode3 = $('#SubClusterCode3').val();
+        var subClusterName3 = $('#SubClusterName3').val();
+        var subClusterStatus3 = $('#SubClusterStatus3').val();
+        var remarks3 = $('#Remarks3').val();
+
+        console.log({
+            divisionName3,
+            subDivisionName3,
+            subClusterCode3,
+            subClusterName3,
+            subClusterStatus3,
+            remarks3
+        });
+    });
+    $('#Cancelbtn3').on('click', function () {
+        var divisionName3= $('#DivisionName3').val('0');
+        var subDivisionName3 = $('#SubDivisionName3').val('0');
+        var subClusterCode3 = $('#SubClusterCode3').val('');
+        var subClusterName3 = $('#SubClusterName3').val('');
+        var subClusterStatus3 = $('#SubClusterStatus3').val('');
+        var remarks3 = $('#Remarks3').val('');
+
+        console.log({
+            divisionName3,
+            subDivisionName3,
+            subClusterCode3,
+            subClusterName3,
+            subClusterStatus3,
+            remarks3
+        });
+    });
+    // var dataArray='';
+    $("#accordionExample").hide();
+    $("#accordionExample1").hide();
+    $("#accordionExample2").hide();
+    $("#accordionExample3").hide();
+    $("#accordionExample4").hide();
+    $('#btnusercreation').click(function () {
+        setActiveButton('#btnusercreation');
+        // Toggle the accordion (show/hide)
+        $("#accordionExample").show();
+        $("#accordionExample1").hide();
+        $("#accordionExample2").hide();
+        $("#accordionExample3").hide();
+        $("#accordionExample4").hide();
+        $('#collapseOne').collapse('show');
+    });
+    $('#btnareacreation').click(function () {
+        setActiveButton('#btnareacreation');
+        // Toggle the accordion (show/hide)
+        $("#accordionExample1").show();
+        $("#accordionExample2").hide();
+        $("#accordionExample3").hide();
+        $("#accordionExample4").hide();
+        $("#accordionExample").hide();
+        $('#collapseOnearea').collapse('show');
+    });
+    $('#btncustomtables').click(function () {
+        setActiveButton('#btncustomtables');
+        // Toggle the accordion (show/hide)
+        $("#accordionExample2").show();
+        $("#accordionExample3").hide();
+        $("#accordionExample4").hide();
+        $("#accordionExample").hide();
+        $("#accordionExample1").hide();
+        $('#collapseOnecustomtables').collapse('show');
+    });
+    $('#btnsqlquery').click(function () {
+        setActiveButton('#btnsqlquery');
+        // Toggle the accordion (show/hide)
+        $("#accordionExample3").show();
+        $("#accordionExample").hide();
+        $("#accordionExample1").hide();
+        $("#accordionExample2").hide();
+        $("#accordionExample4").hide();
+        $('#collapseOnesqlquery').collapse('show');
+    });
+    $('#btnmobileappversions').click(function () {
+        setActiveButton('#btnmobileappversions');
+        // Toggle the accordion (show/hide)
+        $("#accordionExample4").show();
+        $("#accordionExample").hide();
+        $("#accordionExample1").hide();
+        $("#accordionExample2").hide();
+        $("#accordionExample3").hide();
+        $('#collapseOnemobileappversions').collapse('show');
+    });
+    $('#btnSubmit').on('click', function () {
+        let formData = {
+            userID: $('#name').val(),
+            userName: $('#UserName').val(),
+            roleName: $('select').eq(0).val(),
+            companyCode: $('select').eq(1).val(),
+            division: $('select').eq(2).val(),
+            subDivision: $('select').eq(3).val(),
+            password: $('#password').val(),
+            email: $('#Email').val(),
+            phoneNumber: $('#Number').val(),
+            address: $('#text').val()
+        }
+        dataArray = [formData];
+        console.log(dataArray);
+        populateTable()
+    });
+    $('#btnClear').on('click', function () {
+        let formData = {
+            userID: $('#name').val(),
+            userName: $('#UserName').val(),
+            roleName: $('select').eq(0).val(0),
+            companyCode: $('select').eq(1).val(0),
+            division: $('select').eq(2).val(0),
+            subDivision: $('select').eq(3).val(0),
+            password: $('#password').val(),
+            email: $('#Email').val(),
+            phoneNumber: $('#Number').val(),
+            address: $('#text').val()
+        };
+        console.log(formData);
+        // Clear the form inputs
+        $('#name').val('').prop('disabled', false);
+        $('#UserName').val('');
+        $('select').eq(0).val('0');
+        $('select').eq(1).val('0');
+        $('select').eq(2).val('0');
+        $('select').eq(3).val('0');
+        $('#password').val('');
+        $('#Email').val('');
+        $('#Number').val('');
+        $('#text').val('');
+
+        populateTable();
+    });
+    // var dataArrObj1=[
+    //     {
+    //     "DivisionName1":"West Division",
+    //     "DivisionName1":"005",
+    //     "SubDivisionName1":"West zone",
+    //     "SubDivisionArea1":"west area",
+    //     "SAPSubDivisionCode1":"dfsfvb",
+    //     "SubDivisionStatus1":"active",
+    //     "SubDivisionIncharge1":"cvxvz",
+    //     "PhoneNumber1":"9876543210"
+    //     }
+    //     ]
+    //     function populateForm() {
+    //         var data = dataArrObj1[0]; // Assuming we want the first object
+        
+    //         document.getElementById('divisionName').value = data.DivisionName1;
+    //         document.getElementById('divisionCode').value = data.DivisionCode1; // Changed key to match JSON
+    //         document.getElementById('subDivisionName').value = data.SubDivisionName1;
+    //         document.getElementById('subDivisionArea').value = data.SubDivisionArea1;
+    //         document.getElementById('sapSubDivisionCode').value = data.SAPSubDivisionCode1;
+    //         document.getElementById('subDivisionStatus').value = data.SubDivisionStatus1;
+    //         document.getElementById('subDivisionIncharge').value = data.SubDivisionIncharge1;
+    //         document.getElementById('phoneNumber').value = data.PhoneNumber1;
+    //     }
+        
+    //     // Call the function on page load
+    //     window.onload = populateForm;
+    var dataArrObj = [
+        {
+            "userID": "123",
+            "userName": "jhkjhk",
+            "roleName": "Assistant Engineer",
+            "companyCode": "R16",
+            "division": "West Division",
+            "subDivision": "west zone",
+            "password": "jhkjhk",
+            "email": "jhkjh@dgh",
+            "phoneNumber": "4564543654364",
+            "address": "khjkjhk jkjhk"
+        },
+        {
+            "userID": "23",
+            "userName": "jhkjhk",
+            "roleName": "Assistant Engineer",
+            "companyCode": "R16",
+            "division": "West Division",
+            "subDivision": "west zone",
+            "password": "jhkjhk",
+            "email": "jhkjh@dgh",
+            "phoneNumber": "4564543654364",
+            "address": "khjkjhk jkjhk"
+        },
+        {
+            "userID": "45",
+            "userName": "jhkjhk",
+            "roleName": "Assistant Engineer",
+            "companyCode": "R16",
+            "division": "West Division",
+            "subDivision": "west zone",
+            "password": "jhkjhk",
+            "email": "jhkjh@dgh",
+            "phoneNumber": "4564543654364",
+            "address": "khjkjhk jkjhk"
+        },
+        {
+            "userID": "45",
+            "userName": "jhkjhk",
+            "roleName": "Assistant Engineer",
+            "companyCode": "R16",
+            "division": "West Division",
+            "subDivision": "west zone",
+            "password": "jhkjhk",
+            "email": "jhkjh@dgh",
+            "phoneNumber": "4564543654364",
+            "address": "khjkjhk jkjhk"
+        }
+    ]
+    function populateTable() {
+        const tbody = $('#data-table tbody');
+        tbody.empty();
+        dataArrObj.forEach((user, index) => {
+            const row = `
+            <tr data-index="${index}">
+                <td>${user.userID}</td>
+                <td>${user.userName}</td>
+                <td>${user.roleName}</td>
+                <td>${user.companyCode}</td>
+                <td>${user.division}</td>
+                <td>${user.subDivision}</td>
+                <td>${user.password}</td>
+                <td>${user.email}</td>
+                <td>${user.phoneNumber}</td>
+                 <td>${user.address}</td>
+                <td><button class="edit-btn">Edit</button></td>
+            </tr>`;
+            tbody.append(row);
+        });
+    }
+    function editUser(index) {
+        const user = dataArrObj[index];
+        $('#name').val(user.userID).prop('disabled', true);
+        $('#UserName').val(user.userName);
+        $('#roleName').val(user.roleName);
+        $('#companyCode').val(user.companyCode);
+        $('#division').val(user.division);
+        $('#subDivision').val(user.subDivision);
+        $('#password').val(user.password);
+        $('#Email').val(user.email);
+        $('#Number').val(user.phoneNumber);
+        $('#text').val(user.address);
+    }
+    function populateTable() {
+        var $tbody = $('#data-table tbody');
+        $tbody.empty(); // Clear existing rows
+        dataArrObj.forEach(function (item, index) {
+            var row = '<tr data-index="' + index + '">' +
+                '<td>' + item.userID + '</td>' +
+                '<td>' + item.userName + '</td>' +
+                '<td>' + item.roleName + '</td>' +
+                '<td>' + item.companyCode + '</td>' +
+                '<td>' + item.division + '</td>' +
+                '<td>' + item.subDivision + '</td>' +
+                '<td>' + item.email + '</td>' +
+                '<td>' + item.phoneNumber + '</td>' +
+                '<td>' + item.address + '</td>' +
+                '<td><button class="edit-btn">Edit</button> <button class="delete-btn">Delete</button></td>' +
+                '</tr>';
+            $tbody.append(row);
+        });
+        // Data for dropdowns
+        var arrList = [{ "Id": 1, "Name": "West Division" },
+        { "Id": 2, "Name": "East Division" },
+        { "Id": 3, "Name": "North Division" }, { "Id": 4, "Name": "South Division" }];
+        var arrSubList = [[{ "Id": '1', "Name": "Select Sub Division", "name": "Select Subcluster" }, { "Id": 2, "Name": "West zone", "name": "West cluster" }],
+        [{ "Id": '1', "Name": "Select Sub Division", "name": "Select Subcluster" }, { "Id": 2, "Name": "East zone", "name": "East cluster" }],
+        [{ "Id": '1', "Name": "Select Sub Division", "name": "Select Subcluster" }, { "Id": 2, "Name": "North zone", "name": "North cluster" }],
+        [{ "Id": '1', "Name": "Select Sub Division", "name": "Select Subcluster" }, { "Id": 2, "Name": "South zone", "name": "South cluster" }]]
+        // var arrPopLation=[[{"Id":1,"PopL":"20L"},{"Id":2,"PopL":"25L"},{"Id":3,"PopL":"35L"}]];
+        for (var i = 0; i < arrList.length; i++) {
+            $("#Division").append('<option value="' + arrList[i].Id + '">' + arrList[i].Name + '</option>');
+        }
+        var SubDivision;
+        $("#Division").change(function () {
+            $("#SubDivision").empty();
+            var selectedValue = parseFloat($("#Division").val());
+            subvalues = '';
+            if (selectedValue == 1) {
+                subvalues = arrSubList[0];
+            }
+            else if (selectedValue == 2) {
+                subvalues = arrSubList[1];
+            }
+            else if (selectedValue == 3) {
+                subvalues = arrSubList[2];
+            }
+            else if (selectedValue == 4) {
+                subvalues = arrSubList[3];
+            }
+            for (var i = 0; i < subvalues.length; i++) {
+                $("#SubDivision").append('<option value="' + subvalues[i].Id + '">' + subvalues[i].Name + '</option>');
+                //$("#ddlPopulation").append('<option value="' + subvalues[i].Id + '">' + subvalues[i].PopL + '</option>');
+            }
+            $("#SubDivision").val('1').trigger('change');
+        });
+        $("#SubDivision").change(function () {
+            $("#Subcluster").empty();
+            for (var i = 0; i < subvalues.length; i++) {
+                $("#Subcluster").append('<option value="' + subvalues[i].Id + '">' + subvalues[i].name + '</option>');
+            }
+        });
+        // $('#txtvalue').keyup(function () {
+        //  this.value = this.value.match(/^\d+\.?\d{0,2}/);
+        // });
+        function deleteRow(index) {
+            dataArrObj.splice(index, 1);
+            populateTable();
+        }
+        $('#data-table').on('click', '.delete-btn', function () {
+            var index = $(this).closest('tr').data('index');
+            if (confirm('Are you sure you want to delete this item?')) {
+                deleteRow(index);
+            }
+        });
+    }
+    function addRow(item) {
+        dataArrObj.push(item);
+        populateTable();
+    }
+    function editRow(index, updatedItem) {
+        dataArrObj[index] = updatedItem;
+        populateTable();
+    }
+    // Initial table population
+    populateTable();
+    // Handle Edit and Delete
+
+    $('#data-table').on('click', '.edit-btn', function () {
+        var index = $(this).closest('tr').data('index');
+        editUser(index);
+    });
+    $('#openPopup').on('click', function () {
+        $('#popup').show();
+    });
+
+    $('#closeButton').on('click', function () {
+        $('#popup').hide();
+    });
+
+    $(window).on('click', function (event) {
+        if ($(event.target).is($('#popup'))) {
+            $('#popup').hide();
+        }
+    });
+    $('#openPopup1').on('click', function () {
+        $('#popup1').show();
+    });
+
+    $('#closeButton1').on('click', function () {
+        $('#popup1').hide();
+    });
+
+    $(window).on('click', function (event) {
+        if ($(event.target).is($('#popup1'))) {
+            $('#popup1').hide();
+        }
+    });
+    $('#openPopup2').on('click', function () {
+        $('#popup2').show();
+    });
+
+    $('#closeButton2').on('click', function () {
+        $('#popup2').hide();
+    });
+
+    $(window).on('click', function (event) {
+        if ($(event.target).is($('#popup2'))) {
+            $('#popup2').hide();
+        }
+    });
+    $('#SubmitButton').on('click', function () {
+        var divisionCode = $('#DivisionCode').val();
+        var divisionName = $('#DivisionName').val();
+        var divisionNameCode = $('#DivisionNameCode').val();
+        var sapDivisionCode = $('#SAPDivisionCode').val();
+        var circle = $('#Circle').val();
+        var isuCircle = $('#ISUCircle').val();
+        var company = $('#Company').val();
+
+        console.log({
+            divisionCode,
+            divisionName,
+            divisionNameCode,
+            sapDivisionCode,
+            circle,
+            isuCircle,
+            company
+        });
+    });
+    $('#ClearButton').on('click', function () {
+        var divisionCode = $('#DivisionCode').val('');
+        var divisionName = $('#DivisionName').val('');
+        var divisionNameCode = $('#DivisionNameCode').val('');
+        var sapDivisionCode = $('#SAPDivisionCode').val('');
+        var circle = $('#Circle').val('');
+        var isuCircle = $('#ISUCircle').val('');
+        var company = $('#Company').val('');
+
+        console.log({
+            divisionCode,
+            divisionName,
+            divisionNameCode,
+            sapDivisionCode,
+            circle,
+            isuCircle,
+            company
+        });
+    });
+    $('#ButtonSubmit').on('click', function () {
+        var divisionName = $('#Division\\ Name').val();
+        var subDivisionCode = $('#Sub-Division\\ Code').val();
+        var subDivisionName = $('#Sub-Division\\ Name').val();
+        var subDivisionArea = $('#Sub-Division\\ Area').val();
+        var sapSubDivisionCode = $('#SAP\\ Sub-Division\\ Code').val();
+        var subDivisionStatus = $('#Sub-Division\\ Status').val();
+        var subDivisionIncharge = $('#Sub-Division\\ Incharge').val();
+        var phoneNumber = $('#Phone\\ Number').val();
+
+        console.log({
+            divisionName,
+            subDivisionCode,
+            subDivisionName,
+            subDivisionArea,
+            sapSubDivisionCode,
+            subDivisionStatus,
+            subDivisionIncharge,
+            phoneNumber
+        });
+    });
+    $('#CancelButton').on('click', function () {
+        var divisionName = $('#Division\\ Name').val('0');
+        var subDivisionCode = $('#Sub-Division\\ Code').val('');
+        var subDivisionName = $('#Sub-Division\\ Name').val('');
+        var subDivisionArea = $('#Sub-Division\\ Area').val('');
+        var sapSubDivisionCode = $('#SAP\\ Sub-Division\\ Code').val('');
+        var subDivisionStatus = $('#Sub-Division\\ Status').val('');
+        var subDivisionIncharge = $('#Sub-Division\\ Incharge').val('');
+        var phoneNumber = $('#Phone\\ Number').val('');
+
+        console.log({
+            divisionName,
+            subDivisionCode,
+            subDivisionName,
+            subDivisionArea,
+            sapSubDivisionCode,
+            subDivisionStatus,
+            subDivisionIncharge,
+            phoneNumber
+        });
+    });
+    $('#Submitbtn').on('click', function () {
+        var divisionName = $('#Division\\ Name').val();
+        var subDivisionName = $('#Sub-Division\\ Name').val();
+        var subClusterCode = $('#Sub-Cluster\\ Code').val();
+        var subClusterName = $('#Sub-Cluster\\ Name').val();
+        var subClusterStatus = $('#Sub-Cluster\\ Status').val();
+        var remarks = $('#Remarks').val();
+
+        console.log({
+            divisionName,
+            subDivisionName,
+            subClusterCode,
+            subClusterName,
+            subClusterStatus,
+            remarks
+        });
+    });
+    $('#Cancelbtn').on('click', function () {
+        var divisionName = $('#Division\\ Name').val('0');
+        var subDivisionName = $('#Sub-Division\\ Name').val('0');
+        var subClusterCode = $('#Sub-Cluster\\ Code').val('');
+        var subClusterName = $('#Sub-Cluster\\ Name').val('');
+        var subClusterStatus = $('#Sub-Cluster\\ Status').val('');
+        var remarks = $('#Remarks').val('');
+
+        console.log({
+            divisionName,
+            subDivisionName,
+            subClusterCode,
+            subClusterName,
+            subClusterStatus,
+            remarks
+        });
+    });
+
+});
+
+function setActiveButton(buttonId) {
+    // Remove 'active' class from all buttons
+    $('.creation').removeClass('active'); // Adjust selector to match all buttons you want to control
+    // Add 'active' class to the clicked button
+    $(buttonId).addClass('active');
+}
+function toggleDivisionCreation() {
+    var divisionSelect = document.getElementById("Division");
+    var divisionCreationAccordion = document.getElementById("accordionExample8");
+
+    if (divisionSelect.value) {
+        divisionCreationAccordion.style.display = "block";
+    } else {
+        divisionCreationAccordion.style.display = "none";
+    }
+}
+function toggleSubDivisionCreation() {
+    var subdivisionCreationAccordion = $('#accordionExample9');
+
+    if ($('#SubDivisionSelect').val() !== "0") {
+        subdivisionCreationAccordion.show(); // Show the accordion
+    } else {
+        subdivisionCreationAccordion.hide(); // Hide the accordion
+    }
+}
+
+function populateSubcluster() {
+}
+function toggleSubclusterCreation() {
+    var Subcluster = document.getElementById("Subcluster");
+    var subclusterCreationAccordion = document.getElementById("accordionExample10");
+
+    if (Subcluster.value !== "0") {
+        subclusterCreationAccordion.style.display = "block";
+    } else {
+        subclusterCreationAccordion.style.display = "none";
+    }
+}
+
+
